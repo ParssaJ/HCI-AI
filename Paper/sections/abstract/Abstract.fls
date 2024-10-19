@@ -1,8 +1,8 @@
-PWD /Users/parssajashnieh/Documents/Uni Master/Semester 3/HIC/BUW HCI+AI 2024 Template
+PWD /Users/parssajashnieh/Documents/Uni Master/Semester 3/HIC/HCI-AI/Paper
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/parssajashnieh/Documents/Uni Master/Semester 3/HIC/BUW HCI+AI 2024 Template/sections/abstract/Abstract.tex
+INPUT /Users/parssajashnieh/Documents/Uni Master/Semester 3/HIC/HCI-AI/Paper/sections/abstract/Abstract.tex
 OUTPUT sections/abstract/Abstract.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/subfiles/subfiles.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/subfiles/subfiles.cls
@@ -1053,6 +1053,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/subfiles/subfiles.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/subfiles/subfiles.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/subfiles/subfiles.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/import/import.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT sections/abstract/Abstract.aux
 INPUT sections/abstract/Abstract.aux
