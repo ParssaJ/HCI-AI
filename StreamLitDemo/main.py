@@ -1,13 +1,14 @@
 import streamlit as st
+import configparser
 
-st.image("./Assets/static/images/front_logo.png", width=400)
+config = configparser.ConfigParser()
+config.read('./Assets/static/strings/labels.ini')
 
-left_column, right_column = st.columns(2)
+# 3 Columns, then use the middle one to assert that image is centered
+left_col, middle_col, right_col = st.columns(3)
+with middle_col:
+    logo_header = config["headers"]["logo_header"]
+    st.image("./Assets/static/images/front_logo.png", caption=logo_header)
 
-with left_column:
-    search_input = st.text_input(label="Search Item")
-
-options = ("Test1", "Test2")
-
-with right_column:
-    selected_box = st.selectbox(label="Please choose your schemata.sql", options=options)
+search_input_label = config["labels"]["search_input_label"]
+search_input = st.text_input(label=search_input_label)
