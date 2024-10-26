@@ -1,22 +1,3 @@
-CREATE TABLE 'airlines' (
-	uid INTEGER PRIMARY KEY, 
-	Airline TEXT, 
-	Abbreviation TEXT, 
-	Country TEXT
-);
-CREATE TABLE 'airports' (
-	City TEXT, 
-	AirportCode TEXT PRIMARY KEY, 
-	AirportName TEXT, 
-	Country TEXT, 
-	CountryAbbrev TEXT
-);
-CREATE TABLE 'flights' (
-	Airline INTEGER, 
-	FlightNo INTEGER, 
-	SourceAirport TEXT, 
-	DestAirport TEXT, 
-	PRIMARY KEY(Airline, FlightNo),
-	FOREIGN KEY (SourceAirport) REFERENCES airports(AirportCode),
-	FOREIGN KEY (DestAirport) REFERENCES airports(AirportCode)
-);
+version https://git-lfs.github.com/spec/v1
+oid sha256:d512b26790382e4546dc7238f2d4f6fb43f95e6508aed791908b9a1c4896f074
+size 502

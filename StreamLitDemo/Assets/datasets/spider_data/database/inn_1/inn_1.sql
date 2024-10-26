@@ -1,24 +1,3 @@
-CREATE TABLE "Rooms" ( 
-	"RoomId" TEXT PRIMARY KEY,
-	"roomName" TEXT, 
-	"beds" INTEGER, 
-	"bedType" TEXT, 
-	"maxOccupancy" INTEGER, 
-	"basePrice" INTEGER, 
-	"decor" TEXT
-
-);
-
-CREATE TABLE "Reservations" ( 
-	"Code" INTEGER PRIMARY KEY, 
-	"Room" TEXT, 
-	"CheckIn" TEXT, 
-	"CheckOut" TEXT, 
-	"Rate" REAL, 
-	"LastName" TEXT, 
-	"FirstName" TEXT, 
-	"Adults" INTEGER, 
-	"Kids" INTEGER,
-	FOREIGN KEY (Room) REFERENCES Rooms(RoomId)
-);
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:970d2f27277448e9e168260b8bd310d78cf749b49790fc3f2859968b762b8b0e
+size 428

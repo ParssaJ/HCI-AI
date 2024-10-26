@@ -1,30 +1,3 @@
-CREATE TABLE "customers" (
-	"Id" INTEGER PRIMARY KEY,
-	"LastName" TEXT,
-	"FirstName" TEXT
-);
-
-
-CREATE TABLE "goods" (
-	"Id" TEXT PRIMARY KEY,
-	"Flavor" TEXT,
-	"Food" TEXT,
-	"Price" REAL
-);
-
-
-CREATE TABLE "items" (
-	"Receipt" INTEGER,
-	"Ordinal" INTEGER,
-	"Item" TEXT,
-	PRIMARY KEY(Receipt, Ordinal),
-	FOREIGN KEY (Item) REFERENCES goods(Id)
-    FOREIGN KEY (Receipt) REFERENCES receipts(ReceiptNumber)
-);
-
-CREATE TABLE "receipts" (
-	"ReceiptNumber" INTEGER PRIMARY KEY,
-	"Date" TEXT,
-	"CustomerId" INTEGER,
-	FOREIGN KEY(CustomerId) REFERENCES customers(Id)
-);
+version https://git-lfs.github.com/spec/v1
+oid sha256:7456ce1c3625a368f463efe86524013074c75bc21522ae90c0f8ee95ddd72da8
+size 560
