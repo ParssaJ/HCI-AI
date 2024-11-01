@@ -64,7 +64,7 @@
 %%
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
-\title{Translating text to SQL-Queries ensuring Fair Information Practice Principles}
+\title{Translating text to SQL-Queries ensuring a privacy preserving AI}
 %\renewcommand{\shortauthors}{Trovato et al.}
 \author{Thivyan Sivananthan}
 \author{Jacob Ortenberg}
@@ -109,11 +109,20 @@
 
 \maketitle
 
-\includegraphics[width=\textwidth]{images/front_image}
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{images/front_image}
+  \Description{A Figure displaying the client-server interatction,
+  where the input text from a user does not get concatenated
+  to a static SQL-Template but is interpreted by an AI.}
+  \caption{Highlighting the interaction paradigm of the user with an AI. Instead
+  of traditionally passing the users input to a static SQL-Template, it is passed 
+  to an AI-System that interpretes the users search request and dynamically generates a SQL-Query
+  . The resulting query is then executed and displayed for the user in the Interface.}
+\end{figure}
 
-\section{Introduction}
+\subfile{sections/Introduction/Introduction.tex}
 
-\section{Background}
+\subfile{sections/background/background.tex}
 
 \section{Methods}
 
