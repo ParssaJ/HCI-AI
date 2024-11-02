@@ -2,7 +2,7 @@
 \begin{document}
 \section{Introduction}
 In order for a user to interact with a website, an interactive element such as 
-an input text is typically provided. Many of these inputtext-elements work by
+an input text is typically provided. Many of these input text-elements work by
 having a predefined SQL-Query-Template, for which the users input gets concatenated.
 This query then gets passed to the Database-Management-System (DBMS), which executes
 it and returns the result. Although this approach seems simple at first, it has 
@@ -11,11 +11,11 @@ According to the Open Worldwide Application Security Project (OWASP), which is a
 non-profit organization that aims to improve the security of software projects,
 SQL-Injections are still in the Top 10 Security Risks of 2021 and it is likely that 
 they will remain in the Top 10 of 2025, taking into account that they were the number
-one attack in the Top 10 of 2017.
+one attack in the Top 10 of 2017 \cite{owaspfoundationOWASPTopTen2024}.
 \subsection{Generating SQL-Queries dynamically}
 Instead of relying on predefined SQL-Templates, we would like to propose the 
 idea of generating SQL-Queries dynamically using Machine-Learning-Techniques.\\
-By generating SQL-Queries dynamically, the users wishes provided in the inputtext can 
+By generating SQL-Queries dynamically, the users wishes provided in the input text can 
 be taken into account by the AI automatically, providing more specific search results initially.
 Given that the AI performs well enough, this could lead to future websites dropping 
 filtering mechanisms entirely, such as filtering by specific brands or other features,
