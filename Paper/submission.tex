@@ -18,10 +18,10 @@
 \setcopyright{rightsretained}
 \copyrightyear{2025}
 \acmYear{2025}
-%\acmDOI{XXXXXXX.XXXXXXX}
+\acmDOI{}
 %\acmISBN{978-1-4503-XXXX-X/18/06}
-\acmConference[CHI '25]{Proceedings of the CHI Conference on Human Factors in Computing Systems}{April 26--May 1, 2025}{Yokohama, Japan}
-\acmBooktitle{Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '25), April 26--May 1, 2025, Yokohama, Japan}
+\acmConference[Human-Computer Interaction \& Artificial Intelligence]{Final Project for the HIC Module at the Bergische Universität Wuppertal}{October 7--February 28, 2025}{Wuppertal, Germany}
+\acmBooktitle{Final Project for the HIC Module at the Bergische Universität Wuppertal(Human-Computer Interaction \& Artificial Intelligence), October 7--February 28, 2025, Wuppertal, Germany}
 
 
 %%
@@ -64,7 +64,7 @@
 %%
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
-\title{Translating text to SQL-Queries ensuring Fair Information Practice Principles}
+\title{Translating text to SQL-Queries ensuring a privacy preserving AI}
 %\renewcommand{\shortauthors}{Trovato et al.}
 \author{Thivyan Sivananthan}
 \author{Jacob Ortenberg}
@@ -109,11 +109,20 @@
 
 \maketitle
 
-\includegraphics[width=\textwidth]{images/front_image}
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{images/front_image}
+  \Description{A Figure displaying the client-server interatction,
+  where the input text from a user does not get concatenated
+  to a static SQL-Template but is interpreted by an AI.}
+  \caption{Highlighting the interaction paradigm of the user with an AI. Instead
+  of traditionally passing the users input to a static SQL-Template, it is passed 
+  to an AI-System that interpretes the users search request and dynamically generates a SQL-Query
+  . The resulting query is then executed and displayed for the user in the Interface.}
+\end{figure}
 
-\section{Introduction}
+\subfile{sections/Introduction/Introduction.tex}
 
-\section{Background}
+\subfile{sections/background/background.tex}
 
 \section{Methods}
 
