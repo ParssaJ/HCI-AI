@@ -9,6 +9,28 @@ from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.prompts import PromptTemplate
 
 
+def show_title_image():
+    # 3 Columns, then use the middle one to assert that image is centered
+    left_col, middle_col, right_col = st.columns(3)
+    with middle_col:
+        logo_header = config["headers"]["logo_header"]
+        st.image("./Assets/static/images/front_logo.png", caption=logo_header)
+
+
+def show_selectbox_and_return_selection():
+    select_box_caption = config["labels"]["select_box_label"]
+    selected_db = st.selectbox(select_box_caption,
+                               db_labels, index=2)
+    return selected_db
+
+
+def show_selected_db_schema():
+    with open("./Assets/datasets/spider_data/database/" + seletected_database + "/schema.sql") as f:
+        selected_schema_content = f.read()
+        st.session_state.selected_schema_content = selected_schema_content
+    st.image("./Assets/datasets/spider_data/database/" + seletected_database + f"/{seletected_database}.png")
+
+
 def execute_query():
     callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
 
@@ -19,7 +41,7 @@ def execute_query():
         verbose=True,
     )
 
-    template_schema_str = "Based on the following schema: " + selected_schema_content
+    template_schema_str = "Based on the following schema: " + st.session_state["selected_schema_content"]
 
     template = template_schema_str + ("You are the ultimate Database-SQL-Query Constructor."
                                       "Construct a SQL-Query for a Sqlite Database, for {query} ."
@@ -36,32 +58,27 @@ def execute_query():
 
     prompt = PromptTemplate(input_variables=["query"], template=template)
     result_query = llm(prompt.format(query=search_input))
-    st.write(result_query)
+    st.session_state.result_query = result_query
 
 
 config = configparser.ConfigParser()
 config.read('./Assets/static/strings/labels.ini')
 
-# 3 Columns, then use the middle one to assert that image is centered
-left_col, middle_col, right_col = st.columns(3)
-with middle_col:
-    logo_header = config["headers"]["logo_header"]
-    st.image("./Assets/static/images/front_logo.png", caption=logo_header)
+show_title_image()
 
 db_labels = os.listdir("./Assets/datasets/spider_data/database/")
 if ".DS_Store" in db_labels:
     db_labels.remove(".DS_Store")
 
-select_box_caption = config["labels"]["select_box_label"]
-selected_db = st.selectbox(select_box_caption,
-                           db_labels, index=2)
+seletected_database = show_selectbox_and_return_selection()
 
-with open("./Assets/datasets/spider_data/database/" + selected_db + "/schema.sql") as f:
-    selected_schema_content = f.read()
-
-st.image("./Assets/datasets/spider_data/database/" + selected_db + f"/{selected_db}.png")
+show_selected_db_schema()
 
 search_input_label = config["labels"]["search_input_label"]
 search_input = st.text_input(label=search_input_label)
 search_button_submit = st.button(label="Sumbit", on_click=execute_query)
+
+if "result_query" in st.session_state:
+    st.header("_Generated_ Repsonse by :red[LLM]", divider="blue")
+    st.code(st.session_state["result_query"], language="SQL", wrap_lines=True)
 
