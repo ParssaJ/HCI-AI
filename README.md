@@ -1,5 +1,5 @@
 # HCI-AI
-> [!CAUTION]
+> [!Achtung]
 > Um eine Lauffähige Umgebung zu haben, muss man sich eine gguf-Datei aus huggingface herunterladen und diese im model
 > Order in den Assets ablegen. Das Model das ich für die Demo benutzt habe findet ihr unter: (https://huggingface.co/hugging-quants/Llama-3.2-3B-Instruct-Q8_0-GGUF/tree/main).
 > Hintergrund ist der, dass das Model mit 3.4 GB zu groß für Github ist
