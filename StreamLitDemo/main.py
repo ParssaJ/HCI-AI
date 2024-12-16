@@ -164,7 +164,6 @@ if "result_query" in st.session_state:
     st.header("_Generated_ Repsonse by :red[LLM]", divider="blue")
     st.code(st.session_state["result_query"], language="SQL", wrap_lines=True)
 
-if "rag_results" in st.session_state:
-    st.code(st.session_state.rag_results)
-    st.code(st.session_state.rag_test)
+if "prompt_formatted" in st.session_state:
+    st.header("System-Prompt used:")
     st.code(st.session_state.prompt_formatted)
