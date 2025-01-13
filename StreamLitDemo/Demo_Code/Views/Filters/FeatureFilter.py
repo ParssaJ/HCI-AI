@@ -13,3 +13,9 @@ class FeatureFilter:
             default=[],
             placeholder=self.place_holder
         )
+
+        if selected_merkmale:
+            working_copy = self.st_module.session_state.working_copy
+            working_copy_after_filter = [dog for dog in working_copy
+                                         if set(selected_merkmale).issubset(dog[13].split(","))]
+            self.st_module.session_state.working_copy = working_copy_after_filter

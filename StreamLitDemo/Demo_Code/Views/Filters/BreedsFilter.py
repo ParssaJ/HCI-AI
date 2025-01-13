@@ -13,3 +13,9 @@ class BreedsFilter:
             default=[],
             placeholder=self.place_holder
         )
+
+        if selected_merkmale:
+            working_copy = self.st_module.session_state.working_copy
+            working_copy_after_filter = [dog for dog in working_copy
+                                         if dog[3] in selected_merkmale]
+            self.st_module.session_state.working_copy = working_copy_after_filter

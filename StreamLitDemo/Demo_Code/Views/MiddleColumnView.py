@@ -27,7 +27,7 @@ class MiddleColumnView:
                  image_path,
                  website,
                  image_link,
-                 age,
+                 size,
                  features) in results:
 
                 html_code = """
@@ -41,17 +41,18 @@ class MiddleColumnView:
                         </style>
                         """
                 self.st_module.write(html_code, unsafe_allow_html=True)
-
                 self.st_module.image(image_path)
+
                 with self.st_module.popover("Beschreibung durchlesen"):
                     self.st_module.write(description)
                     self.st_module.write("**Merkmale**:")
                     self.st_module.write(features)
                 self.st_module.write(f"**Rasse:** {breed}")
                 self.st_module.write(f"**Geschlecht:** {gender}")
-                self.st_module.write(f"**Alter:** {age}")
+                self.st_module.write(f"**Alter:** {age // 4} Monate")
                 self.st_module.write(f"**Farbe:** {color}")
                 self.st_module.write(f"**Preis**: {price} €")
+                self.st_module.write(f"**Größe**: {size}")
 
     def display_sqi_search_results_text(self, container_body):
         with container_body:
@@ -60,8 +61,10 @@ class MiddleColumnView:
 
             results = self.st_module.session_state.results if "results" in self.st_module.session_state else ""
             if results:
-                left_results = results[0::2]
-                right_results = results[1::2]
+                #left_results = results[0::2]
+                left_results = self.st_module.session_state.working_copy[0::2]
+                #right_results = results[1::2]
+                right_results = self.st_module.session_state.working_copy[1::2]
                 left_col, right_col = self.st_module.columns(2)
 
                 self._display_images(left_col, left_results)

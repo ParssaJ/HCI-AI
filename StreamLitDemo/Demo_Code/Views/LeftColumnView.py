@@ -27,11 +27,12 @@ class LeftColumnView:
             self.st_module.image(image_path, use_column_width=True)
 
     def display_filters(self, container_body):
+        self.st_module.session_state.working_copy = self.dogs_data_original
         with container_body:
             filter_header = self.config_parser["filters"]["header"]
             self.st_module.write(filter_header)
 
-            self.price_filter.display(self.dogs_data_original)
+            self.price_filter.display(self.dogs_data_original,)
             self.gender_filter.display()
             self.size_filter.display()
             self.age_filter.display()

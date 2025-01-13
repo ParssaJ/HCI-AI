@@ -5,12 +5,19 @@ class SizeFilter:
         self.place_holder = configparser["filters"]["place_holder"]
 
     def display(self):
-        options = ["Mini (bis 25cm)", "Klein (bis 40cm)", "Mittel (bis 50cm)", "Mittelgroß (bis 60cm) ",
-                   "Groß (über 60cm)"]
+        #options = ["Mini (bis 25cm)", "Klein (bis 40cm)", "Mittel (bis 50cm)", "Mittelgroß (bis 60cm) ",
+        #          "Groß (über 60cm)"]
+        options = [dog[12] for dog in self.st_module.session_state.working_copy]
         size_label = self.config_parser["filters"]["size"]
-        self.st_module.session_state.size = self.st_module.multiselect(
+        size = self.st_module.multiselect(
             size_label,
             options,
             default=[],
             placeholder=self.place_holder,
         )
+
+        if size:
+            working_copy = self.st_module.session_state.working_copy
+            working_copy_after_filter = [dog for dog in working_copy
+                                         if dog[12] in size]
+            self.st_module.session_state.working_copy = working_copy_after_filter
