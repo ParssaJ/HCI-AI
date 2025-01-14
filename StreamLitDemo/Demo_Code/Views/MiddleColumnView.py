@@ -38,6 +38,9 @@ class MiddleColumnView:
                             button[data-testid="StyledFullScreenButton"] {
                                 visibility: hidden;
                             }
+                            div[data-testid="InputInstructions"] {
+                                visibility: hidden;
+                            }
                         </style>
                         """
                 self.st_module.write(html_code, unsafe_allow_html=True)
@@ -61,9 +64,7 @@ class MiddleColumnView:
 
             results = self.st_module.session_state.results if "results" in self.st_module.session_state else ""
             if results:
-                #left_results = results[0::2]
                 left_results = self.st_module.session_state.working_copy[0::2]
-                #right_results = results[1::2]
                 right_results = self.st_module.session_state.working_copy[1::2]
                 left_col, right_col = self.st_module.columns(2)
 

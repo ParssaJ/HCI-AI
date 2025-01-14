@@ -5,7 +5,16 @@ class RightColumnView:
 
     def display_submit_button(self, container_head):
         with container_head:
-            search_button = self.st_module.button(label="Submit", type="primary")
+            search_col, reset_col = self.st_module.columns(2)
+            with search_col:
+                search_label = self.config_parser["buttons"]["search_button_label"]
+                search_button = self.st_module.button(label=search_label, type="primary")
+
+            with reset_col:
+                reset_label = self.config_parser["buttons"]["reset_button_label"]
+                reset_button = self.st_module.button(label=reset_label, type="secondary")
+                if reset_button:
+                    self.st_module.session_state.results = None
 
     def _display_images(self, column, results):
         with column:

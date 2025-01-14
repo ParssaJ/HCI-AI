@@ -18,11 +18,25 @@ if __name__ == '__main__':
 
     db_connection = DatabaseConnectionProvider()
 
-    default_query = ("SELECT h.*, GROUP_CONCAT(F.Name) FROM Hund h INNER JOIN main.Feature_Hund FH on h.id = "
-                     "FH.Hund_id INNER JOIN main.Feature F on F.id = FH.Feature_id GROUP BY h.id LIMIT 50;")
-    st.session_state.results = db_connection.execute_query(default_query)
+    base_query = ("SELECT h.*, GROUP_CONCAT(F.Name) FROM Hund h INNER JOIN main.Feature_Hund FH on h.id = "
+                     "FH.Hund_id INNER JOIN main.Feature F on F.id = FH.Feature_id")
+
+    query_suffix = " GROUP BY h.id LIMIT 50;"
+
+    #st.session_state.results = db_connection.execute_query(base_query)
 
     llm = ModelLoader.cache_and_load_llm_model()
+
+    if "search_input" in st.session_state:
+        like_clauses = " OR ".join([f"h.description LIKE '%{token}%'" for token in st.session_state.search_input.split(" ")])
+
+        # SQL-Query
+        query = base_query + f" WHERE {like_clauses}" + query_suffix
+
+        st.session_state.results = db_connection.execute_query(query)
+    else:
+        query = base_query + query_suffix
+        st.session_state.results = db_connection.execute_query(query)
 
     load_website_layout()
 
