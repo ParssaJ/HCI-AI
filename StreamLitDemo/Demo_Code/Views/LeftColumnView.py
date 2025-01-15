@@ -12,7 +12,7 @@ class LeftColumnView:
     def __init__(self, st_module, configparser):
         self.st_module = st_module
         self.config_parser = configparser
-        self.dogs_data_original = st_module.session_state.results if "results" in st_module.session_state else None
+        self.dogs_data_original = st_module.session_state.llm_results + st_module.session_state.static_template_queries if "llm_results" and "static_template_queries" in st_module.session_state else st_module.session_state.default_results
         self.price_filter = PriceFilter(st_module, configparser)
         self.gender_filter = GenderFilter(st_module, configparser)
         self.size_filter = SizeFilter(st_module, configparser)
