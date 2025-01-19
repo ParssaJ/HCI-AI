@@ -56,6 +56,7 @@ class MiddleColumnView:
                 self.st_module.write(f"**Farbe:** {color}")
                 self.st_module.write(f"**Preis**: {price} €")
                 self.st_module.write(f"**Größe**: {size}")
+                self.st_module.write(f"**Herkunft**: {birth_country}")
 
     def display_sqi_search_results_text(self, container_body):
         with container_body:

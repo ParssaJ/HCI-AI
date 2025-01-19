@@ -19,9 +19,17 @@ class AgeFilter:
 
         if age:
             selected_min_weeks, selected_max_weeks = age
-            working_copy = self.st_module.session_state.working_copy
+            
+            working_copy = self.st_module.session_state.static_template_results
             working_copy_after_filter = [dog for dog in working_copy
                                          if selected_min_weeks <=
                                          dog[5] // 4
                                          <= selected_max_weeks]
-            self.st_module.session_state.working_copy = working_copy_after_filter
+            self.st_module.session_state.static_template_results = working_copy_after_filter
+
+            working_copy = self.st_module.session_state.llm_results
+            working_copy_after_filter = [dog for dog in working_copy
+                                         if selected_min_weeks <=
+                                         dog[5] // 4
+                                         <= selected_max_weeks]
+            self.st_module.session_state.llm_results = working_copy_after_filter

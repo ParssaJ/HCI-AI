@@ -17,7 +17,12 @@ class SizeFilter:
         )
 
         if size:
-            working_copy = self.st_module.session_state.working_copy
+            working_copy = self.st_module.session_state.static_template_results
             working_copy_after_filter = [dog for dog in working_copy
                                          if dog[12] in size]
-            self.st_module.session_state.working_copy = working_copy_after_filter
+            self.st_module.session_state.static_template_results = working_copy_after_filter
+
+            working_copy = self.st_module.session_state.llm_results
+            working_copy_after_filter = [dog for dog in working_copy
+                                         if dog[12] in size]
+            self.st_module.session_state.llm_results = working_copy_after_filter

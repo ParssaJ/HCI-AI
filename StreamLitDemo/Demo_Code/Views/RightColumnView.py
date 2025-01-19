@@ -55,6 +55,7 @@ class RightColumnView:
                 self.st_module.write(f"**Farbe:** {color}")
                 self.st_module.write(f"**Preis**: {price} €")
                 self.st_module.write(f"**Größe**: {size}")
+                self.st_module.write(f"**Herkunft**: {birth_country}")
 
     def display_static_template_search_results_text(self, container_body):
         header = self.config_parser["search_results"]["right_ai_header"]
@@ -64,8 +65,8 @@ class RightColumnView:
             results = self.st_module.session_state.static_template_results if "static_template_results" in self.st_module.session_state else self.st_module.session_state.default_results
 
             if results:
-                left_results = results[0::2]
-                right_results = results[1::2]
+                left_results = self.st_module.session_state.static_template_results[0::2]
+                right_results = self.st_module.session_state.static_template_results[1::2]
                 left_col, right_col = self.st_module.columns(2, gap="large")
 
                 self._display_images(left_col, left_results)

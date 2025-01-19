@@ -124,7 +124,7 @@ if __name__ == '__main__':
                                 template=template)
         system_prompt_formatted = prompt.format(base_query=base_query, database_schema=database_schema,
                                                 database_features=database_features)
-
+        
         message = client.messages.create(
             model="claude-3-5-sonnet-20241022",
             max_tokens=1000,
@@ -149,6 +149,7 @@ if __name__ == '__main__':
         st.session_state.llm_results = db_connection.execute_query(llm_query)
     else:
         default_query = base_query + query_suffix
+        st.session_state.llm_results = db_connection.execute_query(default_query)
         st.session_state.default_results = db_connection.execute_query(default_query)
-
+        st.session_state.static_template_results = db_connection.execute_query(default_query)
     load_website_layout()
