@@ -7,18 +7,44 @@ from langchain.prompts import PromptTemplate
 from Util.DatabaseConnectionProvider import DatabaseConnectionProvider
 from Util.PageConfigInitialiser import load_page_config
 from Views.ColumnManager import ColumnManager
+from configparser import ConfigParser
 
+import openai
+import os
 
 def load_website_layout():
-    column_manager = ColumnManager(st)
+    st.session_state.column_manager = ColumnManager(st)
+    #st.session_state.column_manager.display_head_container()
+    st.session_state.column_manager.display_body_container()
 
-    column_manager.display_head_container()
-    column_manager.display_body_container()
+def header():
+    col_head_left, col_head_middle, col_head_right = st.columns([0.6, 3, 1], vertical_alignment="bottom")
+    with col_head_left:
+            image_path = "../Assets/static/images/front_logo.png"
+            st.image(image_path, use_column_width=True)
+    with col_head_middle:
+        label = "Suchen Sie hier nach einem Hund"
+        placeholder = "Bsp: 1) handzahmer deutscher Schäferhund oder 2) alle hunde außer Chihuahuas"
+        st.session_state.search_input = st.text_input(
+            label=label,
+            placeholder=placeholder,
+        )
 
+    with col_head_right:
+        search_col, reset_col = st.columns(2)
+        with search_col:
+            search_label = "Suchen"
+            st.session_state.button = st.button(label=search_label, type="primary")
+
+        with reset_col:
+            reset_label = "Suchergebnisse zurücksetzen"
+            reset_button = st.button(label="Suchergebnisse zurücksetzen", type="secondary")
+            if reset_button:
+                st.session_state.results = None
 
 if __name__ == '__main__':
     load_page_config(st)
-
+    header()
     db_connection = DatabaseConnectionProvider()
 
     base_query = ("SELECT h.*, GROUP_CONCAT(F.Name) FROM Hund h INNER JOIN main.Feature_Hund FH on h.id = "
@@ -27,8 +53,10 @@ if __name__ == '__main__':
     query_suffix = " GROUP BY h.id;"
 
     if "search_input" in st.session_state and not st.session_state.search_input.isspace() and st.session_state.search_input:
+        #st.write(getInput())
+        
         like_clauses = " OR ".join(
-            [f"h.description LIKE '%{token}%'" for token in st.session_state.search_input.split(" ")])
+            [f"h.description LIKE '%{token}%' AND h.breed LIKE '%{token}%'" for token in st.session_state.search_input.split(" ")])
 
         # SQL-Query
         static_template_query = base_query + f" WHERE {like_clauses}" + query_suffix
@@ -44,7 +72,7 @@ if __name__ == '__main__':
                     price INTEGER,          
                     breed TEXT,               
                     gender TEXT,            
-                    age INTEGER,
+                    age INTEGER,                  (gemessen in Wochen)
                     color TEXT,                
                     birthCountry TEXT,        
                     description TEXT,                 
@@ -116,16 +144,17 @@ if __name__ == '__main__':
                       "immer nur die komplettierte SQL-Anfrage zurück.\n")
 
         config_parser = configparser.ConfigParser()
-        config_parser.read("../Assets/static/api_keys/config.ini")
-        api_key = config_parser["api_keys"]["claude"]
-        client = anthropic.Anthropic(api_key=api_key)
+
 
         prompt = PromptTemplate(input_variables=["base_query", "database_schema", "database_features"],
                                 template=template)
         system_prompt_formatted = prompt.format(base_query=base_query, database_schema=database_schema,
                                                 database_features=database_features)
-        
-        message = client.messages.create(
+        config_parser.read("../Assets/static/api_keys/config.ini")
+        api_key = config_parser["api_keys"]["claude"]
+        client = anthropic.Anthropic(api_key=api_key)    
+        with st.spinner("Die KI verarbeitet Ihre Anfrage..."):
+            message = client.messages.create(
             model="claude-3-5-sonnet-20241022",
             max_tokens=1000,
             temperature=0,
@@ -142,14 +171,15 @@ if __name__ == '__main__':
                 }
             ]
         )
-
-        llm_query = message.content[0].text
-
-        print(f"Template mit KI: {llm_query}")
-        st.session_state.llm_results = db_connection.execute_query(llm_query)
+            llm_query = message.content[0].text
+            print(f"Template mit KI: {llm_query}")
+            st.session_state.llm_results = db_connection.execute_query(llm_query)
     else:
         default_query = base_query + query_suffix
         st.session_state.llm_results = db_connection.execute_query(default_query)
         st.session_state.default_results = db_connection.execute_query(default_query)
         st.session_state.static_template_results = db_connection.execute_query(default_query)
+    
     load_website_layout()
+
+

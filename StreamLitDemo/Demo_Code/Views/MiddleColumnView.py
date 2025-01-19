@@ -66,8 +66,8 @@ class MiddleColumnView:
             results = self.st_module.session_state.llm_results if "llm_results" in self.st_module.session_state else self.st_module.session_state.default_results
 
             if results:
-                left_results = results[0::2]
-                right_results = results[1::2]
+                left_results = self.st_module.session_state.llm_results[0::2]
+                right_results = self.st_module.session_state.llm_results[1::2]
                 left_col, right_col = self.st_module.columns(2)
 
                 self._display_images(left_col, left_results)

@@ -8,6 +8,7 @@ class SizeFilter:
         #options = ["Mini (bis 25cm)", "Klein (bis 40cm)", "Mittel (bis 50cm)", "Mittelgroß (bis 60cm) ",
         #          "Groß (über 60cm)"]
         options = [dog[12] for dog in self.st_module.session_state.working_copy]
+        options = set(options)
         size_label = self.config_parser["filters"]["size"]
         size = self.st_module.multiselect(
             size_label,
