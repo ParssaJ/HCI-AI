@@ -181,5 +181,3 @@ if __name__ == '__main__':
         st.session_state.static_template_results = db_connection.execute_query(default_query)
     
     load_website_layout()
-
-
