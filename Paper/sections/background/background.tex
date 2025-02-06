@@ -1,5 +1,37 @@
 \documentclass[../../submission.tex]{subfiles}
 \begin{document}
 \section{Background}
-TODO
+\subsection{Translation difficulties between text and SQL(A)}
+Achieving an accurate interpretation of the user's intent in the context of translating text into SQL poses a considerable challenge. 
+This is due to the fact that some words could be ambiguous or the user might use synonyms.  
+The system should also demonstrate fault-tolerance capabilities, as it is expected to generate a query in the event of typing errors. 
+As previously stated in \cite{popescuEtalTowardsTheoryOfNaturalLanguage}, it is imperative to exercise caution to ensure that the system does not generate erroneous queries. 
+Otherwise, there is a risk of diminishing user trust in the website.  
+As elaborated upon in  \cite{popescuEtalTowardsTheoryOfNaturalLanguage}, users demonstrate a reluctance to trade a user interface that is characterised by reliability and predictability for an intelligent system that is deemed unreliable.
+
+
+\subsection{Privacy concerns(A)}
+Furthermore, it must be considered that non-technical users can also exploit the system by requesting private data. 
+This scenario poses significant privacy concerns, given that the users can bypass any need to understand SQL, and instead simply request the data they desire from the LLM. 
+In such systems, the implementation of measures designed to restrict access to data is essential for ensuring the security of private data.
+
+
+\subsection{Problem with existing text-to-sql(A)}
+The rule-based method for generating SQL queries was presented in the paper  \cite{popescuEtalTowardsTheoryOfNaturalLanguage}. 
+However, several issues were identified in the course of this approach, which were addressed to a limited extent. 
+As previously mentioned, the system is confronted with ambiguous words. 
+In  \cite{popescuEtalTowardsTheoryOfNaturalLanguage}, the recommendation was made to present the user with all possible variants that can be derived from the multi-word term.  
+This enables the user to make an informed decision, ensuring an appropriate interpretation of their intention. 
+A further challenge arises when a word is not present in the lexicon, as no query is generated in this instance. 
+In such a scenario, it is imperative for the user to reformulate their query in a manner that is comprehensible to the system. 
+However, this approach introduces a significant disadvantage, as the preliminary query may be processed by the system, but its execution is precluded due to the system's limited capabilities. 
+The maintenance of synonyms poses a considerable challenge, as it is necessary to provide potential users with the opportunity to consult them. Consequently, a continuous adaptation of the system is required to ensure the quality of the results of the searches. 
+As demonstrated in \cite{popescuEtalTowardsTheoryOfNaturalLanguage}, a further issue is the considerable duration of user inquiry processing. In this study, a processing duration of six seconds was observed, which is regarded as relatively extensive when compared to the duration of a search in a web-based store.
+Nonetheless, a pivotal element was absent from the previously mentioned papers: the context of the values stored in the database. 
+To illustrate, supplementary information becomes pertinent when storing the age of dogs. 
+This necessity arises from the potential for storing the age of dogs in either months or years. 
+Depending on the specific context, additional rules may be in place that must be taken into consideration. 
+
+Text-to-SQL systems that leverage LLMs have been developed; a notable example is SQLAI.AI. 
+Despite its development for developers, SQLAI.AI is not suitable for practical application.
 \end{document}
