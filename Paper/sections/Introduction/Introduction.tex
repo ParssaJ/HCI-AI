@@ -1,6 +1,28 @@
 \documentclass[../../submission.tex]{subfiles}
 \begin{document}
 \section{Introduction}
+Online shopping platforms like Amazon and eBay have become the go-to sources for a vast range of products. 
+However, users often face difficulties when searching for specific items, especially products with more complex or technical specifications, 
+such as electronic devices, computer components, or specialized tools. These challenges can lead to frustration and even cause users to switch platforms in 
+search of a better experience. The root of these difficulties lies in the individuality of search behavior, which varies between users. Some rely on generic 
+search terms, such as "laptop," while others prefer highly specific queries, like "Dell XPS 15 9530 with Intel Core i7 and 32GB RAM." Our study found that search 
+behavior is roughly evenly divided between these two approaches, making it essential for e-commerce platforms to optimize their search functionalities to 
+accommodate diverse user needs. At the same time, this presents a challenge, as creating a platform that satisfies all users equally is difficult.
+In addition to search queries, filtering options play a crucial role in the online shopping experience. Filters help users refine their results based on 
+criteria such as price, size, brand, technical specifications, or customer ratings. However, ineffective or overly complex filtering systems can hinder rather 
+than enhance the search process. If filters do not align with user expectations, are difficult to use, or fail to narrow down results efficiently, users may 
+become frustrated and abandon their search. Therefore, improving search functionalities is essential to enhance user experience, increase customer satisfaction, 
+and ensure platform loyalty.Building upon these challenges, we propose an alternative approach to traditional search mechanisms. Instead of relying on predefined SQL templates, we suggest 
+dynamically generating SQL queries using machine learning techniques. By leveraging AI to generate queries in real time, the system can automatically interpret 
+the user’s intent based on their input, providing more precise and relevant search results initially. If the AI performs at a high level, this approach could 
+eventually eliminate the need for manual filtering mechanisms, as the AI would inherently incorporate these preferences into the generated query. 
+This shift could significantly enhance human-computer interaction, making the search process more intuitive, efficient, and user-centric.
+To determine whether such a scenario is truly possible and to understand how users would interact with this approach, we conducted a study. 
+To carry out this study, we implemented a prototype interface to evaluate user behavior and gather insights on the effectiveness of dynamically generated 
+queries in direct comparison to traditional static templates.
+
+
+\subsection{old}
 In order for a user to interact with a website, an interactive element such as 
 an input text is typically provided. Many of these input text-elements work by
 having a predefined SQL-Query-Template, for which the users input gets concatenated.
