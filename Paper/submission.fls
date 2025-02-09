@@ -396,12 +396,12 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\vf\public\libertine\LinL
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineT-tlf-t1--base.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\vf\public\libertine\LinLibertineT-tlf-ts1.vf
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineT-tlf-ts1--base.tfm
-INPUT .\sections\background\background.tex
-INPUT sections\background\background.tex
-INPUT .\sections\background\background.tex
-INPUT sections\background\background.tex
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\vf\public\libertine\LinBiolinumTB-tlf-t1.vf
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinBiolinumTB-tlf-t1--base.tfm
+INPUT .\sections\background\background.tex
+INPUT sections\background\background.tex
+INPUT .\sections\background\background.tex
+INPUT sections\background\background.tex
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\libertine\LinLibertineT-tlf-ot1.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\nxlmi.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxsy.tfm
