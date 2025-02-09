@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.13)  9 FEB 2025 07:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.13)  9 FEB 2025 08:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -885,7 +885,7 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 6.2pt on input line 110.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 8.0pt on input line 110.
-<images/front_image.png, id=71, 1221.56375pt x 426.59375pt>
+<images/front_image.png, id=75, 1221.56375pt x 426.59375pt>
 File: images/front_image.png Graphic file (type png)
 <use images/front_image.png>
 Package pdftex.def Info: images/front_image.png  used on input line 113.
@@ -927,31 +927,27 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.3pt on input line 47.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 5.5pt on input line 47.
-)
+) (sections/methods/methods.tex
 
-[3.3]
+[3.3])
 
 [4.4]
+
+[5.5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-
-[5.5]
 
 [6.6]
 
 [7.7]
 
-[8.8] (submission.bbl
+[8.8]
+
+[9.9] (submission.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 7.0pt on input line 45.
 LaTeX Info: Redefining \tempurl on input line 60.
-
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
-
-
-[9.9]
 LaTeX Info: Redefining \tempurl on input line 74.
 )
 
@@ -965,20 +961,20 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
 Package rerunfilecheck Info: File `submission.out' has not changed.
-(rerunfilecheck)             Checksum: E00E3CCFD7D0DA8B95CF6539CBFA90DC;2638.
+(rerunfilecheck)             Checksum: D4B1596A315E465EDB98D915463C25F3;2779.
  ) 
 Here is how much of TeX's memory you used:
- 21492 strings out of 473898
- 353403 string characters out of 5726950
- 920509 words of memory out of 5000000
- 43449 multiletter control sequences out of 15000+600000
- 698611 words of font info for 304 fonts, out of 8000000 for 9000
+ 21507 strings out of 473898
+ 353798 string characters out of 5726950
+ 923369 words of memory out of 5000000
+ 43455 multiletter control sequences out of 15000+600000
+ 699206 words of font info for 306 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,17n,131p,1034b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,17n,131p,1034b,641s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumT.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
-Output written on submission.pdf (10 pages, 678678 bytes).
+Output written on submission.pdf (10 pages, 684444 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
- 80022 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 190 PDF objects out of 1000 (max. 8388607)
+ 34 named destinations out of 1000 (max. 500000)
+ 80030 words of extra memory for PDF output out of 89155 (max. 10000000)
 
