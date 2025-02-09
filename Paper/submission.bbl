@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{2}
+\begin{thebibliography}{3}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -58,6 +58,20 @@
 \newblock
 \urldef\tempurl%
 \url{https://owasp.org/www-project-top-ten/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Rouse(2023)]%
+        {customerLeavingSites}
+\bibfield{author}{\bibinfo{person}{Eve Rouse}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{New research: 69% of online shoppers go
+  straight to the search bar when visiting ecommerce sites, but 80% leave due
+  to a poor experience}}.
+\newblock
+\urldef\tempurl%
+\url{https://www.nosto.com/blog/new-search-research/}
 \showURL{%
 \tempurl}
 
