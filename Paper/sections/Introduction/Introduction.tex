@@ -1,4 +1,6 @@
 \documentclass[../../submission.tex]{subfiles}
+\usepackage{graphicx,wrapfig,lipsum}
+
 \begin{document}
 \section{Introduction}
 Online shopping platforms like Amazon and eBay have become the go-to sources for a vast range of products. 
@@ -11,8 +13,8 @@ accommodate diverse user needs. At the same time, this presents a challenge, as 
 In addition to search queries, filtering options play a crucial role in the online shopping experience. Filters help users refine their results based on 
 criteria such as price, size, brand, technical specifications, or customer ratings. However, ineffective or overly complex filtering systems can hinder rather 
 than enhance the search process. If filters do not align with user expectations, are difficult to use, or fail to narrow down results efficiently, users may 
-become frustrated and abandon their search. Therefore, improving search functionalities is essential to enhance user experience, increase customer satisfaction, 
-and ensure platform loyalty.Building upon these challenges, we propose an alternative approach to traditional search mechanisms. Instead of relying on predefined SQL templates, we suggest 
+become frustrated and abandon their search. Therefore, improving search functionalities is essential to enhance user experience, increase customer satisfaction
+and ensure platform loyalty. Building upon these challenges, we propose an alternative approach to traditional search mechanisms. Instead of relying on predefined SQL templates, we suggest 
 dynamically generating SQL queries using machine learning techniques. By leveraging AI to generate queries in real time, the system can automatically interpret 
 the user’s intent based on their input, providing more precise and relevant search results initially. If the AI performs at a high level, this approach could 
 eventually eliminate the need for manual filtering mechanisms, as the AI would inherently incorporate these preferences into the generated query. 
@@ -21,40 +23,51 @@ To determine whether such a scenario is truly possible and to understand how use
 To carry out this study, we implemented a prototype interface to evaluate user behavior and gather insights on the effectiveness of dynamically generated 
 queries in direct comparison to traditional static templates.
 
+\subsection{The conventional search mechanism}
+The Open Worldwide Application Security Project (OWASP) regularly updates its top 10 list of web application security risks.
+SQL Injection attacks have consistently remained in this list across multiple iterations, including the 2017 and 2021 versions,
+largely due to the widespread use of custom SQL query templates in web applications\cite{owaspfoundationOWASPTopTen2024}. These templates
+follow predefined schemas where user input, such as search queries, is inserted into predetermined placeholders. This approach
+presents multiple significant limitations. These templates are vulnerable to SQL Injection attacks (SQLIA) if 
+not properly secured. Additionally, their search capabilities are inherently restricted, as the searchable attributes 
+or columns must be explicitly defined by developers based on specific requirements. While these templates excel at 
+simple keyword matching, they 
+struggle with natural language queries due to their rigid, predefined structure. Although this keyword-based 
+approach can efficiently process basic search terms, users typically need to rely on additional filtering 
+mechanisms to narrow down their results to find exactly what they are looking for. However, these filtering 
+systems come with their own set of limitations.
 
-\subsection{old}
-In order for a user to interact with a website, an interactive element such as 
-an input text is typically provided. Many of these input text-elements work by
-having a predefined SQL-Query-Template, for which the users input gets concatenated.
-This query then gets passed to the Database-Management-System (DBMS), which executes
-it and returns the result. Although this approach seems simple at first, it has 
-some pitfalls which need to be addressed, as it is prone to attacks like SQL-Injections.
-According to the Open Worldwide Application Security Project (OWASP), which is a 
-non-profit organization that aims to improve the security of software projects,
-SQL-Injections are still in the Top 10 Security Risks of 2021 and it is likely that 
-they will remain in the Top 10 of 2025, taking into account that they were the number
-one attack in the Top 10 of 2017 \cite{owaspfoundationOWASPTopTen2024}.
-\subsection{Generating SQL-Queries dynamically}
-Instead of relying on predefined SQL-Templates, we would like to propose the 
-idea of generating SQL-Queries dynamically using Machine-Learning-Techniques.\\
-By generating SQL-Queries dynamically, the users wishes provided in the input text can 
-be taken into account by the AI automatically, providing more specific search results initially.
-Given that the AI performs well enough, this could lead to future websites dropping 
-filtering mechanisms entirely, such as filtering by specific brands or other features,
-as the AI would reflect the users wishes automatically in the generated Query, 
-further enhancing the Human-Computer Interaction. This new kind of interaction is highlighted
-in Fig. 1.
-\subsection{Why a privacy-preserving AI is necessary}
-Although the idea of generating SQL-Queries automatically sounds intriguing, there 
-are some practical challenges that have to be taken into account, when deploying the AI 
-into a software project. Under the assumption
-that the AI performs well and that it is unrestrained, nothing would prevent the user
-from requesting search results from the AI, that contain confidential information like 
-passwords, email-addresses or other criteria, which poses a similar threat that 
-are resembled by SQL-Injections. Arguably, this would make the threat of SQL like 
-Injections even worse, as users with no technical background are now able to query 
-for confidential data as well. To mitigate that issue, we enforce a privacy-preserving AI,
-with the goal to never output SQL-queries that could disclose confidential data.
-\subsection{Gathering Data}
-TODO
+\subsection{Limitations of traditional filtering mechanisms}
+Traditional e-commerce platforms typically implement filtering systems through a combination of 
+predefined dropdown menus, checkboxes, and range selectors. While these mechanisms provide basic 
+functionality, they present several significant challenges. First, the static nature of these 
+filters requires regular maintenance and updates to accommodate new product categories and attributes. 
+Second, the presentation of filter options often follows a one-size-fits-all approach, disregarding 
+individual user preferences and shopping patterns. For instance, technical users searching for computer 
+components might prefer detailed specification filters, while casual shoppers might find such granularity 
+overwhelming. Furthermore, traditional filtering systems often struggle with semantic relationships between 
+different product attributes. A user searching for a "gaming laptop" might need to separately filter for 
+high RAM, dedicated graphics card, and fast processor, even though these specifications are inherently 
+related to the concept of gaming performance. This disconnect between user intent and filtering 
+capabilities becomes particularly problematic when dealing with complex product categories that 
+have numerous interdependent specifications, such as electronic devices or specialized equipment.
+
+\subsection{Moving beyond traditional search limitations}
+These limitations of conventional search templates and filtering mechanisms highlight 
+the need for more sophisticated approaches that can adapt to diverse user needs. 
+Modern developments in database querying, machine learning, and natural language processing 
+offer promising directions for addressing these challenges through more flexible and 
+intelligent search solutions.\\
+Based on the identified challenges in e-commerce search mechanisms, we formulate three main research 
+questions that guide our investigation.
+\begin{enumerate}
+    \item We examine how natural language interfaces affect user search behavior and satisfaction 
+    compared to traditional keyword-based approaches.
+    \item We investigate the technical feasibility of translating diverse natural language queries into SQL statements.
+    \item We analyze user preferences and requirements regarding correction mechanisms in AI-driven search systems. 
+    This investigation focuses on understanding which types of refinement options users would find most helpful when 
+    initial search results don't meet their expectations, and how these correction possibilities influence their trust 
+    in the system.
+\end{enumerate}
+
 \end{document}
