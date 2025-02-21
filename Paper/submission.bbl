@@ -66,8 +66,8 @@
         {customerLeavingSites}
 \bibfield{author}{\bibinfo{person}{Eve Rouse}.}
   \bibinfo{year}{2023}\natexlab{}.
-\newblock \bibinfo{booktitle}{\emph{New research: 69% of online shoppers go
-  straight to the search bar when visiting ecommerce sites, but 80% leave due
+\newblock \bibinfo{booktitle}{\emph{New research: 69\% of online shoppers go
+  straight to the search bar when visiting ecommerce sites, but 80\% leave due
   to a poor experience}}.
 \newblock
 \urldef\tempurl%
