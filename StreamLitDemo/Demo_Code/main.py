@@ -112,7 +112,7 @@ if __name__ == '__main__':
                         Schäferhund-Collie-Mix Bernedoodle Pinscher-Mix Englische Bulldogge Akita Inu Beagle-Mix 
                         Husky-Schäferhund-Mix Leonberger-Mix Bordeaux Dogge Papillon-Mix Samojede Australian Shepherd-Border 
                         Collie-Mix Australian Shepherd-Border Collie Mix 
-                        gender: Rüde, Hüdin 
+                        gender: Rüde, Hündin 
                         color: Black-Tri,Weiß Schwarz, 
                         Schwarz,Gelb,Braun,Weiß-Braun,Schwarz-Braun,Schwarz-Weiß,Grau Braun,Tricolor,Apricot Weiß 
                         Schwarz-Tricolor Fawn Gold Gold-Braun Braun-Weiß Schwarz-braun Creme Dreifarbig Schwarz-weiß 
