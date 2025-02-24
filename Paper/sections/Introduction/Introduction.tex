@@ -6,22 +6,26 @@
 Online shopping platforms like Amazon and eBay have become the go-to sources for a vast range of products. 
 However, users often face difficulties when searching for specific items, especially products with more complex or technical specifications, 
 such as electronic devices, computer components, or specialized tools. These challenges can lead to frustration and even cause users to switch platforms in 
-search of a better experience. The root of these difficulties lies in the individuality of search behavior, which varies between users. Some rely on generic 
-search terms, such as "laptop," while others prefer highly specific queries, like "Dell XPS 15 9530 with Intel Core i7 and 32GB RAM." Our study found that search 
-behavior is roughly evenly divided between these two approaches, making it essential for e-commerce platforms to optimize their search functionalities to 
-accommodate diverse user needs. At the same time, this presents a challenge, as creating a platform that satisfies all users equally is difficult.
+search of a better experience. This frustation stems from individual differences in search behaviour, which varies widely among users.
+Some rely on generic search terms, such as "laptop," while others prefer highly specific queries, like "Dell XPS 15 9530 with Intel Core i7 and 32GB RAM." 
+In a preliminary analysis conducted as part of this research, we observed that search behavior splits roughly evenly between these two approaches, a 
+finding derived from user interactions with our prototype interface described later in this paper, making it essential for e-commerce platforms to optimize their search functionalities to 
+accommodate diverse user needs. At the same time, this presents a challenge, as creating a platform that satisfies all users equally is difficult.\\
+While our investigation focuses on e-commerce due to its widespread use and direct impact on user satisfaction and business success, the proposed approach could also 
+benefit other domains, such as medical databases or academic research platforms, where complex queries and diverse user needs are similarly prevalent.\\
 In addition to search queries, filtering options play a crucial role in the online shopping experience. Filters help users refine their results based on 
 criteria such as price, size, brand, technical specifications, or customer ratings. However, ineffective or overly complex filtering systems can hinder rather 
-than enhance the search process. If filters do not align with user expectations, are difficult to use, or fail to narrow down results efficiently, users may 
-become frustrated and abandon their search. Therefore, improving search functionalities is essential to enhance user experience, increase customer satisfaction
-and ensure platform loyalty. Building upon these challenges, we propose an alternative approach to traditional search mechanisms. Instead of relying on predefined SQL templates, we suggest 
+than enhance the search process. If filters fail to match user expectations, prove difficult to navigate, or do not efficiently narrow down results, users may
+abandon their search altogether. Therefore, improving search functionalities is essential to enhance user experience, increase customer satisfaction
+and ensure platform loyalty.\\
+Building upon these challenges, we propose an alternative approach to traditional search mechanisms. Instead of relying on predefined SQL templates, we suggest 
 dynamically generating SQL queries using machine learning techniques. By leveraging AI to generate queries in real time, the system can automatically interpret 
-the user’s intent based on their input, providing more precise and relevant search results initially. If the AI performs at a high level, this approach could 
-eventually eliminate the need for manual filtering mechanisms, as the AI would inherently incorporate these preferences into the generated query. 
+the user’s intent based on their input, providing more precise and relevant search results initially.
+If the AI achieves high accuary, this approach could reduce or even eliminate the need for manual filtering by embedding user preferences directly into the generated queries. 
 This shift could significantly enhance human-computer interaction, making the search process more intuitive, efficient, and user-centric.
 To determine whether such a scenario is truly possible and to understand how users would interact with this approach, we conducted a study. 
-To carry out this study, we implemented a prototype interface to evaluate user behavior and gather insights on the effectiveness of dynamically generated 
-queries in direct comparison to traditional static templates.
+For this purpose, we developed a prototype interface that accepts natural language search queries, allowing us to assess user behaviour and 
+compare the effectiveness of dynamic query generation against traditional static templates.
 
 \subsection{The conventional search mechanism}
 The Open Worldwide Application Security Project (OWASP) regularly updates its top 10 list of web application security risks.
@@ -29,7 +33,8 @@ SQL Injection attacks have consistently remained in this list across multiple it
 largely due to the widespread use of custom SQL query templates in web applications\cite{owaspfoundationOWASPTopTen2024}. These templates
 follow predefined schemas where user input, such as search queries, is inserted into predetermined placeholders. This approach
 presents multiple significant limitations. These templates are vulnerable to SQL Injection attacks (SQLIA) if 
-not properly secured. Additionally, their search capabilities are inherently restricted, as the searchable attributes 
+not properly secured. For example, a poorly sanitized input like "laptop; DROP TABLE products;" could compromise the entire database. 
+Additionally, their search capabilities are inherently restricted, as the searchable attributes 
 or columns must be explicitly defined by developers based on specific requirements. While these templates excel at 
 simple keyword matching, they 
 struggle with natural language queries due to their rigid, predefined structure. Although this keyword-based 
@@ -46,9 +51,9 @@ Second, the presentation of filter options often follows a one-size-fits-all app
 individual user preferences and shopping patterns. For instance, technical users searching for computer 
 components might prefer detailed specification filters, while casual shoppers might find such granularity 
 overwhelming. Furthermore, traditional filtering systems often struggle with semantic relationships between 
-different product attributes. A user searching for a "gaming laptop" might need to separately filter for 
-high RAM, dedicated graphics card, and fast processor, even though these specifications are inherently 
-related to the concept of gaming performance. This disconnect between user intent and filtering 
+different product attributes. A user searching for a "gaming laptop" might need to individually select filters
+for high RAM (e.g., 16GB) and a fast process (e.g., Intel Core i7), despite these being inherently tied to 
+gaming performance. This disconnect between user intent and filtering 
 capabilities becomes particularly problematic when dealing with complex product categories that 
 have numerous interdependent specifications, such as electronic devices or specialized equipment.
 
@@ -56,7 +61,7 @@ have numerous interdependent specifications, such as electronic devices or speci
 These limitations of conventional search templates and filtering mechanisms highlight 
 the need for more sophisticated approaches that can adapt to diverse user needs. 
 Modern developments in database querying, machine learning, and natural language processing 
-offer promising directions for addressing these challenges through more flexible and 
+offer promising directions for adressing these challenges through more flexible and 
 intelligent search solutions.\\
 Based on the identified challenges in e-commerce search mechanisms, we formulate three main research 
 questions that guide our investigation.
