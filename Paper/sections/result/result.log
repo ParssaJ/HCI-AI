@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.13)  15 FEB 2025 12:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.13)  25 FEB 2025 14:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -12,8 +12,8 @@ Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
 Preamble taken from file `../../submission.tex'
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/import\import.sty
 Package: import 2020/04/01  v 6.2
-) (c:\Users\User\HCI-AI\Paper\submission.tex (acmart.cls
-Document Class: acmart 2024/05/27 v2.08 Typesetting articles for the Association for Computing Machinery
+) (../../submission.tex (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/acmart\acmart.cls
+Document Class: acmart 2024/12/28 v2.12 Typesetting articles for the Association for Computing Machinery
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
@@ -208,9 +208,6 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/textcase\textcase.sty
-Package: textcase 2023/07/27 v1.04 Text only upper/lower case changing (DPC)
-Package textcase Info: Defining Legacy names on input line 20.
 )
 \@ACM@acmcp@delta=\dimen167
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
@@ -567,10 +564,10 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@ACM@badge@width=\skip64
 \@ACM@title@width=\skip65
 \@ACM@badge@skip=\skip66
-Class acmart Info: Printing CCS on input line 1799.
-Class acmart Info: Printing bibformat on input line 1799.
-Class acmart Info: Printing folios on input line 1801.
-Class acmart Info: Setting authorsperrow to 0 on input line 1809.
+Class acmart Info: Printing CCS on input line 1806.
+Class acmart Info: Printing bibformat on input line 1806.
+Class acmart Info: Printing folios on input line 1808.
+Class acmart Info: Setting authorsperrow to 0 on input line 1816.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/comment\comment.sty
 \CommentStream=\write3
  Excluding comment 'comment') Excluding comment 'CCSXML'
@@ -597,12 +594,12 @@ Package: fancyhdr 2024/07/23 v4.3.1 Extensive control of page headers and footer
 \ACM@linecount@bxht=\skip77
 \ACM@linecount=\count319
  Special comment 'acks'
-LaTeX Font Info:    Trying to load font information for T1+LinuxLibertineT-TLF on input line 3576.
+LaTeX Font Info:    Trying to load font information for T1+LinuxLibertineT-TLF on input line 3588.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/libertine\t1linuxlibertinet-tlf.fd
 File: T1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for T1/LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 3576.
+(Font)              scaled to size 9.0pt on input line 3588.
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2024-08-30 L3 programming layer (loader) 
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -628,7 +625,7 @@ Package: wrapfig 2003/01/31  v 3.6
 )))
 Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 2.
 \c@theorem=\count325
- Excluding comment 'screenonly' Include comment 'printonly' Include comment 'anonsuppress' (c:\Users\User\HCI-AI\Paper\sections\result\result.aux)
+ Excluding comment 'screenonly' Include comment 'printonly' Include comment 'anonsuppress' (result.aux)
 \openout1 = `result.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 2.
@@ -833,20 +830,59 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 11.
 
 
-LaTeX Warning: Reference `fig:result_KI' on page 1 undefined on input line 11.
+LaTeX Warning: Reference `fig:result_AI' on page 1 undefined on input line 11.
 
 
-LaTeX Warning: Reference `fig:result_Konv' on page 1 undefined on input line 18.
+LaTeX Warning: Reference `fig:wiener_dog' on page 1 undefined on input line 19.
 
-<images/without_filter.png, id=6, 826.506pt x 360.693pt>
-File: images/without_filter.png Graphic file (type png)
-<use images/without_filter.png>
-Package pdftex.def Info: images/without_filter.png  used on input line 35.
-(pdftex.def)             Requested size: 430.00462pt x 187.655pt.
+<../../images/result_ki.png, id=6, 482.457pt x 328.281pt>
+File: ../../images/result_ki.png Graphic file (type png)
+<use ../../images/result_ki.png>
+Package pdftex.def Info: ../../images/result_ki.png  used on input line 25.
+(pdftex.def)             Requested size: 193.50076pt x 131.6607pt.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 36.
+(Font)              scaled to size 8.0pt on input line 26.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 28.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `LinuxLibertineT-TLF' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
+(Font)              scaled to size 9.0pt on input line 28.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 9.0pt on input line 28.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 9.0pt on input line 28.
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 9.0pt on input line 28.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 9.0pt on input line 28.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 9.0pt on input line 28.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 9.0pt on input line 28.
+<../../images/result_konv.png, id=7, 482.457pt x 328.281pt>
+File: ../../images/result_konv.png Graphic file (type png)
+<use ../../images/result_konv.png>
+Package pdftex.def Info: ../../images/result_konv.png  used on input line 31.
+(pdftex.def)             Requested size: 193.50076pt x 131.6607pt.
 
-LaTeX Warning: Reference `fig:without_filter' on page 1 undefined on input line 41.
+
+LaTeX Warning: Reference `fig:result_Konv' on page 1 undefined on input line 41.
+
+<../../images/wiener_dog.jpg, id=8, 1396.4672pt x 652.68843pt>
+File: ../../images/wiener_dog.jpg Graphic file (type jpg)
+<use ../../images/wiener_dog.jpg>
+Package pdftex.def Info: ../../images/wiener_dog.jpg  used on input line 51.
+(pdftex.def)             Requested size: 430.00462pt x 200.97687pt.
+
+Underfull \vbox (badness 3735) has occurred while \output is active []
 
 
 
@@ -856,78 +892,84 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [1.1{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_nh77jq.enc} <./images/without_filter.png>]
+) [1.1{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_nh77jq.enc} <../../images/result_ki.png> <../../images/result_konv.png>]
 
-Package natbib Warning: Citation `popescuEtalTowardsTheoryOfNaturalLanguage' on page 2 undefined on input line 64.
+[2.2 <../../images/wiener_dog.jpg>]
 
+LaTeX Warning: Reference `fig:without_filter' on page 3 undefined on input line 62.
 
-LaTeX Warning: Reference `fig:filter' on page 2 undefined on input line 71.
-
-<images/filter.jpg, id=22, 184.69pt x 125.46875pt>
-File: images/filter.jpg Graphic file (type jpg)
-<use images/filter.jpg>
-Package pdftex.def Info: images/filter.jpg  used on input line 79.
-(pdftex.def)             Requested size: 150.50424pt x 102.24557pt.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 83.
+LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 70.
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/libertine\ts1linuxlibertinet-tlf.fd
+File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 70.
 Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `LinuxLibertineT-TLF' (encoding: OT1).
+(microtype)             `LinuxLibertineT-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 9.0pt on input line 83.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 9.0pt on input line 83.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 9.0pt on input line 83.
-(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 9.0pt on input line 83.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 9.0pt on input line 83.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 9.0pt on input line 83.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 9.0pt on input line 83.
-<images/vorschlag.jpg, id=23, 318.18875pt x 167.62625pt>
-File: images/vorschlag.jpg Graphic file (type jpg)
-<use images/vorschlag.jpg>
-Package pdftex.def Info: images/vorschlag.jpg  used on input line 86.
-(pdftex.def)             Requested size: 236.50385pt x 124.59138pt.
+<../../images/without_filter.png, id=29, 826.506pt x 360.693pt>
+File: ../../images/without_filter.png Graphic file (type png)
+<use ../../images/without_filter.png>
+Package pdftex.def Info: ../../images/without_filter.png  used on input line 79.
+(pdftex.def)             Requested size: 430.00462pt x 187.655pt.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 108.
 
 
-LaTeX Warning: Reference `fig:suggestions' on page 2 undefined on input line 96.
+LaTeX Warning: Reference `fig:filter' on page 3 undefined on input line 108.
+
+<../../images/filter.jpg, id=30, 305.14pt x 216.81pt>
+File: ../../images/filter.jpg Graphic file (type jpg)
+<use ../../images/filter.jpg>
+Package pdftex.def Info: ../../images/filter.jpg  used on input line 115.
+(pdftex.def)             Requested size: 184.89883pt x 131.38052pt.
 
 
-LaTeX Warning: Reference `fig:suggestions' on page 2 undefined on input line 103.
-
-
-
-[2.2 <./images/filter.jpg> <./images/vorschlag.jpg>]
-<images/result_ki.png, id=30, 482.457pt x 328.281pt>
-File: images/result_ki.png Graphic file (type png)
-<use images/result_ki.png>
-Package pdftex.def Info: images/result_ki.png  used on input line 114.
-(pdftex.def)             Requested size: 193.50076pt x 131.6607pt.
-<images/result_konv.png, id=31, 482.457pt x 328.281pt>
-File: images/result_konv.png Graphic file (type png)
-<use images/result_konv.png>
-Package pdftex.def Info: images/result_konv.png  used on input line 120.
-(pdftex.def)             Requested size: 193.50076pt x 131.6607pt.
-
-
-Package natbib Warning: There were undefined citations.
-
-
-
-c:/Users/User/HCI-AI/Paper/sections/result/result.tex:129: Undefined control sequence.
+c:/Users/User/HCI-AI/Paper/sections/result/result.tex:120: Undefined control sequence.
 \f@nch@olh ->\ACM@linecountL \shorttitle 
                                          \strut 
-l.129 \end{document}
+l.120  \end{figure}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[3.3{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_naooyc.enc} <../../images/without_filter.png>]
+
+LaTeX Warning: Reference `fig:no_result' on page 4 undefined on input line 132.
+
+<../../images/keine_ergebnisse.jpg, id=40, 317.185pt x 108.405pt>
+File: ../../images/keine_ergebnisse.jpg Graphic file (type jpg)
+<use ../../images/keine_ergebnisse.jpg>
+Package pdftex.def Info: ../../images/keine_ergebnisse.jpg  used on input line 142.
+(pdftex.def)             Requested size: 236.50385pt x 80.8321pt.
+
+LaTeX Warning: Reference `fig:suggestions' on page 4 undefined on input line 163.
+
+
+Underfull \hbox (badness 4518) in paragraph at lines 161--165
+ \T1/LinuxBiolinumT-TLF/m/it/9 (+20) 1.4.4 Real-time AI-driven Sug-ges-tions.[]
+ []
+
+<../../images/vorschlag.jpg, id=41, 317.185pt x 133.49875pt>
+File: ../../images/vorschlag.jpg Graphic file (type jpg)
+<use ../../images/vorschlag.jpg>
+Package pdftex.def Info: ../../images/vorschlag.jpg  used on input line 168.
+(pdftex.def)             Requested size: 236.50385pt x 99.54324pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[4.4 <../../images/filter.jpg> <../../images/keine_ergebnisse.jpg>]
+
+c:/Users/User/HCI-AI/Paper/sections/result/result.tex:185: Undefined control sequence.
+\f@nch@olh ->\ACM@linecountL \shorttitle 
+                                         \strut 
+l.185 \end{document}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -935,12 +977,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[3.3 <./images/result_ki.png> <./images/result_konv.png>]
+[5.5 <../../images/vorschlag.jpg>]
 
-LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (1 not 3).
+LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (1 not 5).
                Rerun to correct this.
 
-(c:\Users\User\HCI-AI\Paper\sections\result\result.aux)
+(result.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
@@ -959,20 +1001,20 @@ Package rerunfilecheck Warning: File `result.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `result.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  BE121E0E8C538BC5E226A3435886C614;743.
+(rerunfilecheck)             After:  576052351EEF66CE8BF15B086C997C28;1400.
  ) 
 Here is how much of TeX's memory you used:
- 21207 strings out of 473898
- 346265 string characters out of 5726950
- 875571 words of memory out of 5000000
- 43425 multiletter control sequences out of 15000+600000
- 619403 words of font info for 147 fonts, out of 8000000 for 9000
+ 21347 strings out of 473898
+ 350340 string characters out of 5726950
+ 882456 words of memory out of 5000000
+ 43482 multiletter control sequences out of 15000+600000
+ 631631 words of font info for 194 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 110i,17n,148p,1046b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumT.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb>
-Output written on c:\Users\User\HCI-AI\Paper\sections\result\result.pdf (3 pages, 1100557 bytes).
+ 110i,16n,148p,1046b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumT.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTI.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb>
+Output written on result.pdf (5 pages, 1422024 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 32810 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 93 PDF objects out of 1000 (max. 8388607)
+ 22 named destinations out of 1000 (max. 500000)
+ 41012 words of extra memory for PDF output out of 42996 (max. 10000000)
 
