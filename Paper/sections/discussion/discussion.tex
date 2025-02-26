@@ -1,51 +1,73 @@
 \documentclass[../../submission.tex]{subfiles}
 \begin{document}
 \section{Discussion}
-The objective of the paper is to propose the development of an artificial intelligence (AI) system designed 
-to facilitate the search process for products by users.
+Our study set out to explore the potential of an AI-driven natural language interface (NLI) 
+for enhancing e-commerce search experiences by dynamically generating SQL queries, as opposed 
+to relying on traditional static templates and filtering mechanisms. The results, detailed in 
+Section 4, provide compelling evidence that users find the AI-driven system more intuitive and 
+satisfying (mean satisfaction score of 1.69, SD 0.48) compared to the conventional system (mean 3.62, SD 0.51). 
+However, several limitations and biases in our methodology warrant a critical discussion to contextualize these 
+findings and guide future improvements.
 
-\subsection{Use of Filter}
-The user study revealed that the majority of users preferred to work with the filters first. 
-This phenomenon may be attributed to the fact that contemporary systems are generally designed to assume that users will 
-employ search filters during the search process. Consequently, users may find it unconventional to utilize solely the 
-search bar to perform a search. The utilization of artificial intelligence by the majority of users does not align with 
-conventional practices, as individuals have become accustomed to employing filters within online shopping platforms rather 
-than utilizing the capabilities of AI directly. Following a series of inquiries, a conclusion was reached: The users have 
-adapted to the system and are now able to discern whether the AI comprehends their intentions. Consequently, the majority 
-of users have increasingly relied on the AI rather than the filters. Therefore, a period of adaptation is required for 
-users to acclimatize to the KI. It is imperative to acknowledge the pivotal role of artificial intelligence in the 
-integration of such systems within e-commerce platforms. The objective is to cultivate a conscious awareness among users.
+\subsection{User Satisfaction and Behavioral Shifts}
+The high satisfaction with the AI-driven system, as reported in Section 4.1, aligns 
+with our hypothesis from Section 1 that dynamically generated SQL queries could better 
+capture user intent, reducing reliance on manual filters. Participants appreciated the AIs ability 
+to handle synonyms (e.g., "Wiener Dog" interpreted as "Dachshund") and typographical errors, a capability 
+absent in the static template approach. This finding echoes Section 2.2 discussion of modern NL-to-SQL systems 
+leveraging large language models to interpret complex queries intuitively. However, this positive reception may be inflated by 
+the participant pools composition—exclusively computer science students, with only one female participant 
+among the 13. As noted in Section 3, this homogeneous group likely possesses above-average technical literacy, 
+potentially skewing their comfort with an AI-driven interface over traditional filters. A more diverse sample, 
+including non-technical users or older adults as suggested in Section 5.4, might reveal different preferences, 
+particularly given the adaptation period observed in Section 4.1, where users initially favored filters before shifting reliance to the AI.
 
-\subsection{Improvement through AI}
-The implementation of artificial intelligence has yielded notable enhancements in the realm of product search, 
-thereby facilitating a more efficient and user-friendly experience for consumers. The artificial intelligence system demonstrated 
-the capacity to automatically resolve spelling errors, thereby exhibiting enhanced tolerance for errors when compared to conventional 
-systems. A further favorable aspect is that the AI was able to accurately interpret synonyms, thereby identifying the correct products.
+\subsection{Role of Filters and Implementation Bias}
+Section 4.2 revealed a nuanced picture: while 69.2\% of participants could manage without 
+filters in the AI-driven system, a notable minority (23.1\%) preferred their retention for visual 
+clarity (e.g., price sliders). This suggests that while the AI holds promise for reducing filter 
+dependency—as hypothesized in Section 1.3—the transition may not be seamless for all users. A 
+significant confounder here is the naive implementation of the static template, described in Section 
+3.1 as a basic tokenization and OR-condition matching across breeds and descriptions. This rudimentary 
+design, acknowledged in Section 4.1, likely underperformed compared to industry-standard static 
+templates (e.g., those on Amazon or eBay), potentially exaggerating the AIs perceived superiority. 
+A more sophisticated static baseline, incorporating weighted attributes or semantic matching, could 
+have provided a fairer comparison, as noted in Section 5.4. This limitation underscores a methodological 
+bias that future iterations must address to validate the AIs advantages more robustly.
 
-\subsection{Limitations}
-The implementation of AI could be exploited by users with relative ease, provided 
-they have some degree of experience with AI. In the user study, for instance, a user 
-effectively replaced the system with the search bar and issued commands through it. 
+\subsection{Technical Feasibility and Prompt Design}
+The technical feasibility of NL-to-SQL translation, a core research question from Section 1.3, 
+was demonstrated through the Claude API’s ability to generate accurate SQL queries from varied 
+inputs (Section 3.1). However, Section 4.3 highlighted a critical security flaw: the AI translated a 
+malicious input ("delete all tables") into an executable query. This vulnerability, absent in the static 
+template due to its predefined structure, aligns with Section 1.1 mention of SQL Injection risks but 
+reveals a gap in our implementation. The rudimentary system prompt used for the Claude API, detailed in 
+Section 3.1, included only the schema and a base query without explicit constraints on permissible 
+operations (e.g., restricting to SELECT statements). This oversight contrasts with Section 2.2 emphasis on 
+the need for transparency and safety in modern NL-to-SQL systems. A more robust prompt, incorporating a whitelist 
+of allowed commands or natural language instructions to prioritize safety, could mitigate such risks, 
+enhancing the systems real-world applicability.
 
-The search function implemented in the conventional system did not align with the prevailing 
-technological standards. The search was exclusively based on textual descriptions, which is a limitation when attempting to emulate
-existing web shops. It is therefore recommended that a search function be implemented that aligns with contemporary technological 
-standards to facilitate the emulation of modern web shops.
+\subsection{Correction Strategies and Missing Metrics}
+Section 4.4 outlined user-suggested strategies like dynamic filter adjustment and query confidence 
+indicators, addressing the third research question from Section 1.3 about refining inaccurate results. 
+These suggestions align with Section 2.3 emphasis on usability and feedback in NL-to-SQL systems, 
+enhancing transparency and trust. However, our study lacked quantitative metrics to assess filter 
+interaction rigorously, such as a counter tracking filter usage frequency or duration, as noted in 
+your request. This omission, stemming from the study design in Section 3, limits our ability to 
+statistically correlate filter reliance with satisfaction or adaptation, weakening claims about 
+behavioral shifts (Section 4.1). Future work should integrate such metrics to provide a data-driven basis 
+for evaluating the AIs potential to supplant filters, as proposed in Section 5.4.
 
-\subsection{Future Work}
-In light of the limited diversity observed in user studies, it would be advisable to undertake a study that involves fewer participants, 
-particularly those with a background in information technology. Additionally, it would be beneficial to include older adult groups to 
-assess the intuitiveness of the artificial intelligence interface. This approach would facilitate a comprehensive evaluation of the ease 
-of use of the AI for different demographics.
+\subsection{Additional Limitations}
+Beyond the biases and limitations you specified, additional weaknesses emerged. 
+The small sample size (n=13), acknowledged in Section 4.1, precludes statistical 
+significance testing, rendering our findings exploratory rather than conclusive. 
+The choice of dogs as a product category (Section 3), while practical, may not generalize to 
+more complex domains like electronics, where interdependent attributes (Section 1.2) could challenge the AIs 
+query generation accuracy. Furthermore, the side-by-side interface design (Section 3.1) may have introduced a c
+ontrast effect, where the AIs results appeared more favorable simply due to the static systems visible shortcomings, 
+a potential bias not addressed in our analysis.
 
-A further investigation could be conducted in which the conventional system and the AI are compared on two separate pages. 
-This would allow for the assessment of the efficiency and efficacy of AI utilization in a web shop. This approach could also address 
-the filter bias identified in our user study.
-
-Due to temporal constraints, a static template was employed, with its sole reliance on the description. In this instance, 
-the integration of a state-of-the-art template could potentially enhance the comparison.
-
-Another aspect that must also be mentioned in this context is protecting the system from being exploited by users. 
-It is essential to ensure that users cannot exercise any control over the AI.
 
 \end{document}

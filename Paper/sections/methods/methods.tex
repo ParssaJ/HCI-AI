@@ -1,86 +1,92 @@
 \documentclass[../../submission.tex]{subfiles}
+\usepackage{graphicx}
 \begin{document}
+
 \section{Methods}
-For our study, we implemented a natural language interface in the 
-form of a webshop that allows users to directly compare our approach 
-of dynamically generated queries with a traditional static template. 
-This setup lets users try both methods directly and compare how well 
-they retrieve relevant search results. For our example webshop, we 
-chose to focus on a single category of items to ensure a more controlled 
-and meaningful analysis. We ultimately decided on a webshop offering dogs\todo{Mehr details zum Hundedatensatz, wieviele Datenelemente, ki generiert, wieviele Rassen, welche Farben etc.}, 
-as dogs are highly popular and provide a wide range of attributes 
-(e.g., size, breed, color, temperament) that lend themselves well 
-to semantic search queries.
-The interface was structured so that the displayed search results 
-were divided into two distinct sections. On the left side, the results 
-were generated using AI-driven, dynamically created search queries, 
-while on the right side, the results were retrieved using a traditional, 
-static query template, incorporating a semantic matching function \todo{konkrete Details zum statischen Template schreiben}. To 
-ensure a fair and realistic comparison, the static template-based method 
-was designed to reflect commonly used search mechanisms in existing e-commerce platforms. 
-This approach ensured that any observed differences in search effectiveness were truly 
-attributable to the AI-driven query generation, rather than artificial constraints imposed on the baseline method.
-The user entered their search query through a shared search bar. We decided to apply 
-the filtering functionality to both sections via a unified sidebar to ensure a 
-consistent user experience and avoid confusion, even though it was not strictly 
-necessary for the AI-driven side, as the constraints covered by the filters could 
-also be expressed in natural language. This design enabled users to directly 
-compare both approaches in real time. By reviewing both result sets side by side, participants 
-could evaluate the effectiveness of each method and determine which approach best aligned 
-with their personal search behavior and preferences.
+To investigate the potential of our proposed approach, we designed a study centered around a webshop interface that enables users to directly 
+compare dynamically generated SQL queries with traditional static templates. This dual-display setup allows participants to experience both 
+methods in real time and assess their effectiveness in retrieving relevant search results. To ensure a focused and controlled analysis, we 
+limited the webshop to a single product category. We chose dogs as the focal category due to their popularity and the diverse range of attributes—such as 
+breed, age, gender, color, size, and over 50 unique features—that lend themselves well to complex, semantic search queries. The underlying dataset comprises 
+147 AI-generated dog records, synthesized using ChatGPT and Claude, and enriched with real-world data from www.edogs.de \cite{edogsHundemarktHundeOnline}. A 
+structured relational database was developed to support efficient querying across these attributes.
+
+The interface presents search results in two side-by-side sections, as illustrated in Fig. \ref{fig:wiener_dog}. 
+The left section displays results from AI-driven, dynamically generated queries, while the right section shows results 
+from a static query template enhanced with semantic matching. Users submit their queries via a shared search bar, with 
+filtering options applied consistently across both sections through a unified sidebar. Although the AI-driven approach could 
+theoretically incorporate filter-like constraints within natural language inputs, we retained traditional filters to maintain 
+a consistent user experience and facilitate direct comparison. This design empowers participants to evaluate both methods simultaneously, 
+offering insights into how each aligns with their search preferences and behaviors.
 
 \subsection{Implementation of the Interface}
-Our initial approach for dynamically generating SQL queries was to use a local large language model. 
-This decision was based on the assumption that a local model would provide greater control over query 
-generation and data security. However, we soon encountered hardware limitations, as running large models 
-locally required significant RAM resources. Consequently, we had to rely on smaller models, which led 
-to suboptimal performance in terms of both query accuracy and processing speed. To address these challenges, 
-we explored the possibility of using an API-based solution. For this, we tested both the Claude API and 
-the OpenAI API. After extensive testing, we found that the Claude API produced slightly more accurate SQL 
-queries, particularly for ambiguous or complex user inputs. Consequently, we decided to integrate the Claude API into our system. 
-In the prompt we used to dynamically generate SQL queries, we provided the API with both the 
-database schema and all possible attribute values. This allowed the AI to correctly interpret 
-user input and generate the appropriate query, even when the input was vague or descriptive. 
-Additionally, we included a "base query" \todo{näher auf die base-query eingehen, warum braucht man diese? Weil wir von einer Struktur und Reihenfolge ausgehen}in the prompt, which outlined a general structure for 
-the SQL query that the AI would then refine and complete based on the user's input.
+Initially, we aimed to leverage a local large language model for dynamic SQL query generation, drawn by the advantages of cost-free access, 
+robust documentation, and adaptability. However, hardware constraints quickly surfaced. Testing models like Meta Llama-3.3-70B-Instruct \cite{MetallamaLlama3370BInstructHugging2024} and Microsoft Phi-4 \cite{MicrosoftPhi4Hugging2025} from Hugging Face on a system with 8GB RAM proved unfeasible due to insufficient memory and suboptimal performance, even with quantized versions (e.g., GGUF models). These limitations prompted a shift to an API-based solution. We selected the Claude API, which has demonstrated superior performance in complex tasks like programming and translation compared to alternatives like ChatGPT \cite{soboEvaluatingLLMsCode2025}.
+
+For the AI-driven approach, we crafted a prompt that includes the database schema, a comprehensive list of available features (e.g., "Hündin" or "Rüde" for gender), 
+and a base query to guide the generation process. This base query, shown in Fig. \ref{fig:base_query}, provides a standardized structure that ensures consistent 
+table relationships and attribute retrieval, which the AI refines based on user input. This setup enables the system to interpret both vague and detailed queries 
+accurately, mapping them to appropriate SQL statements. In contrast, the static template-based method adopts a straightforward yet functional design, tokenizing 
+user input and matching words to an OR-condition across dog breeds and descriptions, as depicted in Fig. \ref{fig:static_template}. While simple, this approach 
+ensures a fair baseline for comparison, allowing differences in performance to reflect the capabilities of AI-driven generation rather than deficiencies in the 
+static method.
+
+\begin{figure}[h]
+   \centering
+   \textbf{Base-Query}\par\medskip
+   \begin{lstlisting}
+      SELECT h.*, GROUP_CONCAT(F.Name) 
+      FROM Hund h 
+      INNER JOIN 
+      main.Feature_Hund FH on h.id = FH.Hund_id 
+      INNER JOIN main.Feature F on F.id = FH.Feature_id
+   \end{lstlisting}
+   \caption{Base query utilized in our study, dynamically extended by the Claude API. The \texttt{GROUP\_CONCAT} function aggregates all associated features into a single entry per dog, while the predefined structure ensures a consistent result order, such as the sequence of attributes, essential for our search implementation.}
+   \label{fig:base_query} % Label hinzugefügt für Referenzierung
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \textbf{Static Template Implementation}\par\medskip
+   \begin{lstlisting}
+      SELECT h.*, GROUP_CONCAT(F.Name) 
+      FROM Hund h 
+      INNER JOIN main.Feature_Hund FH on h.id = FH.Hund_id 
+      INNER JOIN main.Feature F on F.id = FH.Feature_id
+      WHERE (h.description LIKE '%Labrador%' AND h.breed LIKE '%Labrador%') 
+         OR (h.description LIKE '%freundlich%' AND h.breed LIKE '%freundlich%')
+   \end{lstlisting}
+   \caption{Static query template implementation exemplified with the input 'Labrador freundlich'. For each token ('Labrador' and 'freundlich', meaning 'friendly' in German), the template generates \texttt{LIKE} conditions to match both the \texttt{h.breed} and \texttt{h.description} attributes, linked by \texttt{OR}, extending the base query for keyword-based search.}
+   \label{fig:static_template}
+\end{figure}
 
 \subsection{User Study}
-In the course of our user study, a group of 13 participants was examined, consisting of 12 males and one female. 
-The majority of the participants were currently enrolled in a Bachelor's or Master's program in Computer Science. 
-Additionally, most had prior experience with artificial intelligence, either through academic studies or personal interest.
-This sample was a convenience sample drawn from our academic environment, resulting in a small and relatively homogeneous group. 
-Before the study began, all participants were informed about its primary objective, which was to evaluate the 
-performance of the AI-driven search system in direct comparison to a conventional, template-based search mechanism. 
-By conducting this study, we aimed to determine whether the AI system could produce superior results in product search. 
-Our central hypothesis was that the AI-driven approach would outperform the static template-based method in terms of 
-both search accuracy and user satisfaction. Specifically, we expected that the AI-generated queries would excel in 
-handling vague, descriptive, or multi-criteria searches, whereas the static method would remain competitive for 
-straightforward, attribute-based queries. The study was designed to test these assumptions and explore whether 
-AI-driven search could serve as a viable alternative to traditional filtering mechanisms. The participants were 
-asked to answer a predefined set of questions (see Appendix) to assess their experience and the system's performance. 
-The user study was divided into three phases. In the first phase, participants were asked a series of general 
-questions before interacting with the interface. These questions aimed to gather insights into their past search 
-behavior, including any difficulties or challenges they had encountered when searching for specific items and the 
-consequences these issues had on their overall shopping experience. In the second phase, participants were introduced
- to our interface and given the opportunity to explore its functionality. To familiarize themselves with the system, 
- participants were first asked to complete a set of predefined search tasks. These tasks aimed to provide an understanding
-  of the interface’s functionality and the variety of dogs and their attributes. The participants were allowed to 
-  conduct these searches freely, choosing between traditional static filters and natural language queries. 
-  The tasks were designed to cover different levels of search complexity. The initial tasks involved simple 
-  attribute-based filtering (e.g., 'Find the most expensive Labrador Retriever') \todo{Die drei Phasen der Studie (Vorabfragen, Interaktion, Abschlussfragebogen) sind grob skizziert, aber Details fehlen. Welche „vorgegebenen Suchaufgaben“ wurden in Phase 2 genau gestellt? Die Beispiele („teuerster Labrador Retriever“, „seniorenfreundliche Rottweiler oder junge Schäferhunde“) sind hilfreich, aber wie viele Aufgaben gab es insgesamt? Wie wurden sie ausgewählt, um die Bandbreite der Suchkomplexität abzudecken?
-  Die Aussage, dass spätere Aufgaben „schwierig oder unmöglich mit Filtern allein“ waren, wird nicht belegt. Warum waren sie unmöglich? Fehlten logische Operatoren (z. B. OR) in der statischen Vorlage? Dies muss präzisiert werden, um die Überlegenheit der KI-Methode zu untermauern.}, while later tasks were either 
-  very difficult or even impossible to accomplish with filters alone—for example, "OR" queries 
-  (e.g., 'Find all Rottweilers that are senior-friendly or German Shepherds younger than 12 months'). 
-  By structuring the tasks in this way, we ensured that participants engaged with both search approaches 
-  and experienced the unique advantages of the AI-driven method, particularly in handling complex or multi-criteria searches. 
-  Participants also had the option to refine or correct their queries if the initial results were unsatisfactory. After this
-   guided introduction, they were encouraged to experiment with their own complex search queries using natural language. The 
-   final phase of the study involved a more detailed questionnaire designed to evaluate the AI-driven approach in comparison 
-   to the conventional model. To assess participant satisfaction, we employed a 5-point Likert scale covering various aspects 
-   of search performance, including result accuracy, ease of use, and efficiency. In addition to quantitative ratings, we 
-   included open-ended questions that allowed participants to provide qualitative feedback. This mixed-methods approach 
-   enabled us to gain deeper insights into user preferences and identify potential areas for improvement. We also investigated 
-   participants' perspectives on the role of filtering mechanisms, exploring whether a model like ours could serve as a potential 
-   replacement for traditional filtering functionalities.
+Our study involved 13 participants—12 male and one female—predominantly computer science students pursuing Bachelors or Masters degrees, 
+many with prior exposure to artificial intelligence through coursework or personal interest. This convenience sample, drawn from our academic 
+network, is small and relatively homogeneous but sufficient for an exploratory investigation. Participants were briefed on the study’s goal: to 
+compare the AI-driven search system against a conventional template-based approach and assess its potential to enhance product search accuracy and 
+user satisfaction. We hypothesized that the AI-generated queries would outperform the static method, particularly for vague, descriptive, or multi-criteria 
+searches, while the static approach would remain competitive for simple, attribute-based queries.
+
+The study unfolded in three phases. First, participants answered general questions about their past search experiences, 
+focusing on challenges encountered and their impact on shopping behavior. In the second phase, they interacted with the interface, 
+completing six predefined search tasks designed to explore varying levels of complexity:
+
+\begin{itemize}
+   \item Find the Labrador Retriever
+   \item Find the most expensive Labrador Retriever
+   \item Find the most expensive Labrador Retriever (without price filter)
+   \item Find all dogs except Australian Shepherd
+   \item Find Chihuahuas that are eager to work
+   \item Find all Rottweilers that are senior-friendly or German Shepherds younger than 12 months
+\end{itemize}
+
+These tasks progressed from basic attribute searches to complex queries unachievable with filters alone, 
+such as those requiring logical operators like "OR" across distinct attributes. Participants could freely use 
+natural language or static filters (unless specified), with the option to refine queries if results fell short. 
+Following this guided exploration, they were encouraged to devise their own complex searches. The final phase involved a 
+detailed questionnaire with a 5-point Likert scale assessing accuracy, ease of use, and efficiency, complemented by open-ended 
+questions for qualitative insights. This mixed-methods approach illuminated user preferences, system strengths, and areas for refinement, 
+while also probing whether AI-driven search could supplant traditional filtering mechanisms.
 
 \end{document}

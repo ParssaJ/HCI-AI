@@ -4,6 +4,22 @@
 \usepackage{subfiles}
 \usepackage{graphicx,wrapfig,lipsum}
 \usepackage{todonotes}
+\usepackage{listings} % Für Code-Darstellung
+\usepackage{xcolor}   % Für Farben im Code
+
+% SQL-Formatierung definieren
+\lstset{
+    language=SQL,                % Sprache auf SQL setzen
+    basicstyle=\ttfamily\small,  % Schriftart und -größe
+    keywordstyle=\color{blue},   % Schlüsselwörter blau
+    stringstyle=\color{red},     % Strings rot
+    commentstyle=\color{green},  % Kommentare grün
+    showstringspaces=false,      % Keine Leerzeichen in Strings anzeigen
+    frame=single,                % Rahmen um den Code
+    breaklines=true,             % Zeilenumbruch erlauben
+    numbers=left,                % Zeilennummern links
+    numberstyle=\tiny\color{gray}% Stil der Zeilennummern
+}
 
 %%
 %% \BibTeX command to typeset BibTeX logo in the docs
@@ -135,18 +151,23 @@ Translation}
 
 \subfile{sections/discussion/discussion.tex}
 
-\subsection{Design Recommendations}
-
-\section{Conclusions}
+\section{Conclusion}
+This study underscores the transformative potential of AI-driven NL-to-SQL systems 
+for e-commerce search, with users reporting higher satisfaction (mean 1.69, SD 0.48) 
+and appreciating query flexibility—like synonym recognition (Section 4)—compared to static 
+templates (mean 3.62, SD 0.51). Yet, practical deployment demands addressing critical hurdles. 
+The participant bias toward tech-savvy computer science students and a single female (Section 4.1) calls 
+for broader demographic validation, while the naive static template (Section 3.1) and 
+rudimentary Claude API prompt (Section 4.3) require sophisticated baselines and security 
+enhancements, such as whitelisted SQL commands. Integrating filter-interaction counters and 
+testing across complex domains like electronics (Section 1.2), as suggested in Section 5.4, 
+would further validate these findings. Overcoming these technical, methodological, and usability 
+challenges is essential to achieving Section 1s vision: a seamless, intuitive search aligning 
+with diverse user needs, capable of reshaping human-computer interaction in e-commerce and similar fields.
 
 \section{Acknowledgement}
-We would like to express our sincere gratitude 
-towards our lecturer Prof. Hendrik Heuer at the
-bergische Universität Wuppertal for his 
-valuable feedback provided after the lectures 
-and during the final presentation
-of our topic.
-
+We wish to extend our gratitude to our lecturer, Prof. Hendrik Heuer, at the Bergische Universität Wuppertal, for 
+his insightful and valuable feedback provided following our lectures and during the final presentation of our research topic.
 % I try to avoid appendices
 %\appendix
 %\section{Appendix}
