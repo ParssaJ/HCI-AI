@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex submission"] 1740489909.16171 "submission.aux" "submission.bbl" "submission" 1740489914.49132 0
+["bibtex submission"] 1740517151.64985 "submission.aux" "submission.bbl" "submission" 1740517156.54531 0
   "./ACM-Reference-Format.bst" 1740464271 93414 86eaa0e4fdb37f9b776e2166aab73ed4 ""
-  "./references.bib" 1740464821 1247 b3c8af2244c17cc25745ac3e16f1c29e ""
-  "submission.aux" 1740489913 9782 e46ab5c21dfe3a752881b36c38e8962b "pdflatex"
+  "./references.bib" 1740514147 1247 b3c8af2244c17cc25745ac3e16f1c29e ""
+  "submission.aux" 1740517155 9587 d389eb18740c0eb5ee220a5e6339380f "pdflatex"
   (generated)
   "submission.bbl"
   "submission.blg"
   (rewritten before read)
-["pdflatex"] 1740489909.4934 "c:/Users/User/HCI-AI/Paper/submission.tex" "submission.pdf" "submission" 1740489914.49208 0
+["pdflatex"] 1740517152.07314 "c:/Users/User/HCI-AI/Paper/submission.tex" "submission.pdf" "submission" 1740517156.54618 0
   "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1740464425 187664 65fa417f6850b604c49bfafe76826e39 ""
   "C:/Users/User/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1728826984 11947767 e9dfcc0de151c95f6e1fa9bac9eede22 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_25tcsq.enc" 1497086288 2921 8ca0eb0831f9bc5da080d3697cfe67bf ""
@@ -254,13 +254,13 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693732032 123 a302f2c651a95033260db60e51527ae8 ""
   "acmart.cls" 1740464271 123006 2a5baeb8318eb99dc9a5a841b1125658 ""
-  "c:/Users/User/HCI-AI/Paper/submission.tex" 1740489903 5297 24e9911063fba6f17be80f5ed7897f04 ""
+  "c:/Users/User/HCI-AI/Paper/submission.tex" 1740517146 5297 24e9911063fba6f17be80f5ed7897f04 ""
   "images/filter.jpg" 1740464152 12908 17e1ce7ab4eafe7eb35fc5e61bb34c74 ""
   "images/front_image.png" 1738851120 364596 279161a8d130699019c085b2eee211a5 ""
-  "images/keine_ergebnisse.jpg" 1740464152 13355 9a2150c5262616236c0bc0f51cdaa20a ""
+  "images/keine_ergebnisse.jpg" 1740515042 14675 d397f882de56d78f844bd09e44563536 ""
   "images/result_ki.png" 1740464152 126768 12b4a6d999abd516b6d3e39499d93c07 ""
   "images/result_konv.png" 1740464152 180078 c44569c0c54c009eb78eefe90fec1610 ""
-  "images/vorschlag.jpg" 1740464152 8774 c6f46f436c696f86d0f1d4d145caac33 ""
+  "images/vorschlag.jpg" 1740515100 9541 c84299a3d9c7924a24fcea03e48e9d41 ""
   "images/wiener_dog.jpg" 1740464152 233516 4a23b11b1bfb211cb82c943f3f5e6a8f ""
   "images/without_filter.png" 1740464152 318890 8e3a09def30c697be660eba82ddb505e ""
   "sections/Introduction/Introduction.tex" 1740464821 6988 027000728966da2bf5d8e56a744c1f85 ""
@@ -268,11 +268,11 @@
   "sections/background/background.tex" 1740464821 6363 7d6fbc2375f8051f71637f9add12329b ""
   "sections/discussion/discussion.tex" 1740464271 3970 9cf7779538b56a4ca8ac4d03731f474a ""
   "sections/methods/methods.tex" 1740464821 6094 6b8579da875fad401ea3aa1d75032b7f ""
-  "sections/result/result.tex" 1740489903 11206 7cdf28a02c1da970ecba0e86cf6ff7a3 ""
-  "submission.aux" 1740489913 9782 e46ab5c21dfe3a752881b36c38e8962b "pdflatex"
-  "submission.bbl" 1740489909 3038 4b3e240fb6fc45abdc9b4aaf723f653d "bibtex submission"
-  "submission.out" 1740489913 5008 4316de9c03dbd55a145b009f790861b0 "pdflatex"
-  "submission.tex" 1740489903 5297 24e9911063fba6f17be80f5ed7897f04 ""
+  "sections/result/result.tex" 1740517146 12888 db677e76ee6c67a1f8a145d7a6d8ab0d ""
+  "submission.aux" 1740517155 9587 d389eb18740c0eb5ee220a5e6339380f "pdflatex"
+  "submission.bbl" 1740517151 3038 4b3e240fb6fc45abdc9b4aaf723f653d "bibtex submission"
+  "submission.out" 1740517155 5008 3f2d210b4da1f3c454f70e5debfd93d5 "pdflatex"
+  "submission.tex" 1740517146 5297 24e9911063fba6f17be80f5ed7897f04 ""
   (generated)
   "submission.aux"
   "submission.log"

@@ -44,17 +44,20 @@ accustomed to the AI’s ability to understand their intent, their reliance on m
 filters decreased. This shift likely contributed to the conventional system’s perceived 
 inferiority, as it depended heavily on filter usage to refine results. This rapid 
 adaptation suggests a potential change in search behavior, though further analysis is 
-needed to confirm its extent.
+needed to confirm its extent. 
 
 
-\todo{Fig.4 vor 4.2}
 \begin{figure}[h]
-    \includegraphics[width=\textwidth]{images/wiener_dog}
+    \includegraphics[width=0.7\textwidth]{images/wiener_dog}
     \caption{In this picture we see the website that was developed for the project. The website was divided so that the user can quickly see which results belong to AI and which to the conventional system. To demonstrate the performance of the AI, Wiener dog was entered in the input field. As you can see, the AI can handle this, but the conventional system cannot.}
     \Description{}
     \label{fig:wiener_dog}
  \end{figure} 
 
+ It’s worth noting that the results for the conventional 
+system should be considered in light of the relatively simple static template we used. 
+This basic design may have contributed to its poorer performance, and a more sophisticated 
+static template could potentially have yielded better outcomes.
 
  \subsection{The Role of Filters in Enhancing User Experience}
  Despite the AI’s potential to replace traditional filtering mechanisms, our study 
@@ -94,7 +97,16 @@ primarily computer science students, which may limit generalizability.
  Prepared Statements, which bind user inputs to predefined query structures, preventing 
  malicious commands from being executed. Alternatively, a whitelist of permitted SQL 
  operations (e.g., SELECT only) could ensure that generated queries remain safe, enhancing 
- both functionality and security.
+ both functionality and security. 
+
+ To address this, we propose implementing a log file-based blacklist to enhance security. 
+ This approach would involve maintaining a record of prohibited words, such as specific 
+ table names or keywords like "delete" or "drop," that the AI is not permitted to include 
+ in its output. Before executing any generated SQL query, the AI could cross-check its 
+ commands against this blacklist. If a match is detected, the query would be blocked, 
+ preventing potentially harmful operations. This mechanism would safeguard both the 
+ integrity of the data and the security of the database, offering a practical layer 
+ of protection while preserving the system’s functionality for legitimate search tasks.
  
  \subsection{Optimizing Query Correction Strategies (RSQ3)}
  To address usability challenges and enhance trust, we investigated user preferences 
@@ -105,15 +117,16 @@ primarily computer science students, which may limit generalizability.
      \centering
      \begin{minipage}{0.40\textwidth}
         \subsubsection{Dynamic Filter Adjustment}
-        A participant has proposed an adjustment of the filters, based on the input provided. As illustrated in Figure \ref{fig:filter}, the potential appearance of the phenomenon is 
-        demonstrated. In this instance, the filter is dynamically adjusted. Therefore, the user is able to ascertain 
+        A participant has proposed an adjustment of the filters, based on the input provided. As illustrated in Figure \ref{fig:filter}, 
+        the idea is to highlight implicitely used filters visually, i.e. dynamically adjusting filters on the interface. 
+        Therefore, the user is able to ascertain 
         which filters the AI utilizes and, consequently, identify the potential origin of an error. Therefore, the user 
-        has the option of either utilizing the filter to resolve the issue or adjusting the initial search query.       
+        has the option of either utilize the filter to resolve the issue or adjusting the initial search query.       
      \end{minipage}
      \hfill
      \begin{minipage}{0.43\textwidth}
         \includegraphics[width=\textwidth]{images/filter}
-        \caption{Here the user can see how the filter is adapted to the user's input. The filter adapts to user input, revealing AI misinterpretations.}
+        \caption{Here the user can see how the filter is adapted to the user's input. The filter adapts to user input, revealing AI misinterpretations (implicitely).}
         \Description{}
         \label{fig:filter} 
     \end{minipage}
@@ -125,16 +138,15 @@ primarily computer science students, which may limit generalizability.
     \centering
     \begin{minipage}{0.35\textwidth}
         \subsubsection{User Notification for No Results}
-        A further potential avenue for enhancing the efficacy of the user's 
+        A further potential avenue for enhancing the efficancy of the user's 
         outcomes is the implementation of an artificial intelligence system that can 
         evaluate the combinability of diverse features during the user's input phase. 
         In such a case, it is essential that the user be alerted to this possibility. 
-        As demonstrated in Figure \ref{fig:no_result}, the initial state is displayed, denoting the current 
-        state of affairs.The subsequent version has been enhanced to alert the user to the 
-        absence of products for a given combination of features. In this instance, the 
-        "under 2 months" feature is distinctly emphasized, as it does not result in any products. 
+        The current state of the AI, reflecting the original user input, is shown in Figure \ref{fig:no_result}. The subsequent version has been enhanced to alert the user to the 
+        absence of search results for a given combination of features. In this instance, the 
+        "under 2 months" feature is distinctly emphasized, as it does not result in any search results. 
         Therefore, the user has the capacity to modify the preliminary search query and discern the 
-        elements that are not compatible. 
+        elements that are not compatible.  
     \end{minipage}
     \hfill
     \begin{minipage}{0.55\textwidth}
@@ -158,10 +170,10 @@ A further point to be considered is the potential for the AI to present analogou
     \centering
     \begin{minipage}{0.35\textwidth}
         \subsubsection{Real-time AI-driven Suggestions}
-        Another idea for improving AI is to offer the user search suggestions as they type. 
+        Another idea for improving the system is to offer the user search suggestions as they type. 
         This not only enables the AI to deliver more relevant results, but also to better understand what the user is looking for.
-        An example of this is shown in Figure \ref{fig:suggestions}. The user enters 'Chihuahua that is black and...' and the AI suggests narrowing the 
-        search - for example to 'Chihuahuas under three months'.
+        An example of this is shown in Figure \ref{fig:suggestions}. The user enters 'Puppy that is black and...' and the AI suggests narrowing the 
+        search - for example to 'Puppy that is black and under three months'.
     \end{minipage}
     \hfill
     \begin{minipage}{0.55\textwidth}
@@ -176,10 +188,18 @@ A further point to be considered is the potential for the AI to present analogou
  
  \subsubsection{Query Confidence Indicator}   
  
- Another suggestion from users is for the AI to characterise its uncertainty in the 
- generated query, for example by specifying an uncertainty score. This would indicate 
- how confident the AI is in its interpretation of the query. This allows the user to assess 
- whether the search results may be inaccurate or incorrect, and to make adjustments 
- if necessary.
+ Another suggestion from users is that the AI should more clearly indicate its uncertainty 
+ when interpreting a query, for example, by providing an uncertainty score ranging from 
+ 0 to 1. This score would reflect how confident the AI is in its understanding of the 
+ request. This would allow users to better assess whether the provided results might 
+ be inaccurate or incorrect, enabling them to make adjustments if needed.
+
+ An example from the current AI system illustrates this. When a user searches for 
+ a “cheap dog,” the AI often simply returns the least expensive dog available. 
+ However, this may not align with what the user intended; perhaps they were looking 
+ for a cost-effective yet suitable dog for specific needs. An uncertainty score could 
+ indicate how reliable the results are, signaling to the user that the interpretation 
+ of their query might not be entirely accurate. This would give the user the opportunity 
+ to refine their request for more appropriate responses.
 
 \end{document}

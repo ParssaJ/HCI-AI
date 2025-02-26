@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.13)  25 FEB 2025 14:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.13)  25 FEB 2025 21:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1154,65 +1154,49 @@ Package pdftex.def Info: images/result_konv.png  used on input line 31.
 
 
 [6.6]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 50.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 50.
-
 <images/wiener_dog.jpg, id=169, 1396.4672pt x 652.68843pt>
 File: images/wiener_dog.jpg Graphic file (type jpg)
 <use images/wiener_dog.jpg>
-Package pdftex.def Info: images/wiener_dog.jpg  used on input line 52.
-(pdftex.def)             Requested size: 430.00462pt x 200.97687pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+Package pdftex.def Info: images/wiener_dog.jpg  used on input line 51.
+(pdftex.def)             Requested size: 301.00192pt x 140.6838pt.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 70.
-<images/without_filter.png, id=171, 826.506pt x 360.693pt>
+(Font)              scaled to size 9.0pt on input line 73.
+
+
+[7.7 <./images/result_ki.png> <./images/result_konv.png> <./images/wiener_dog.jpg>]
+<images/without_filter.png, id=179, 826.506pt x 360.693pt>
 File: images/without_filter.png Graphic file (type png)
 <use images/without_filter.png>
-Package pdftex.def Info: images/without_filter.png  used on input line 79.
+Package pdftex.def Info: images/without_filter.png  used on input line 82.
 (pdftex.def)             Requested size: 430.00462pt x 187.655pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-
-[7.7 <./images/result_ki.png> <./images/result_konv.png>]
-
-[8.8 <./images/wiener_dog.jpg> <./images/without_filter.png>]
+[8.8 <./images/without_filter.png>]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 108.
-<images/filter.jpg, id=188, 305.14pt x 216.81pt>
+(Font)              scaled to size 9.0pt on input line 120.
+<images/filter.jpg, id=187, 305.14pt x 216.81pt>
 File: images/filter.jpg Graphic file (type jpg)
 <use images/filter.jpg>
-Package pdftex.def Info: images/filter.jpg  used on input line 115.
+Package pdftex.def Info: images/filter.jpg  used on input line 128.
 (pdftex.def)             Requested size: 184.89883pt x 131.38052pt.
-<images/keine_ergebnisse.jpg, id=190, 317.185pt x 108.405pt>
+<images/keine_ergebnisse.jpg, id=189, 355.3275pt x 109.40875pt>
 File: images/keine_ergebnisse.jpg Graphic file (type jpg)
 <use images/keine_ergebnisse.jpg>
-Package pdftex.def Info: images/keine_ergebnisse.jpg  used on input line 142.
-(pdftex.def)             Requested size: 236.50385pt x 80.8321pt.
+Package pdftex.def Info: images/keine_ergebnisse.jpg  used on input line 154.
+(pdftex.def)             Requested size: 236.50385pt x 72.82433pt.
 
-Underfull \hbox (badness 4518) in paragraph at lines 161--165
+
+[9.9 <./images/filter.jpg> <./images/keine_ergebnisse.jpg>]
+Underfull \hbox (badness 4518) in paragraph at lines 173--177
  \T1/LinuxBiolinumT-TLF/m/it/9 (+20) 4.4.4 Real-time AI-driven Sug-ges-tions.[]
  []
 
-<images/vorschlag.jpg, id=192, 317.185pt x 133.49875pt>
+<images/vorschlag.jpg, id=200, 370.38374pt x 134.5025pt>
 File: images/vorschlag.jpg Graphic file (type jpg)
 <use images/vorschlag.jpg>
-Package pdftex.def Info: images/vorschlag.jpg  used on input line 168.
-(pdftex.def)             Requested size: 236.50385pt x 99.54324pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
-[9.9 <./images/filter.jpg> <./images/keine_ergebnisse.jpg>]) (sections/discussion/discussion.tex
-Underfull \vbox (badness 2865) has occurred while \output is active []
-
-
+Package pdftex.def Info: images/vorschlag.jpg  used on input line 180.
+(pdftex.def)             Requested size: 236.50385pt x 85.88632pt.
+) (sections/discussion/discussion.tex
 
 [10.10 <./images/vorschlag.jpg>]) (submission.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
@@ -1231,20 +1215,20 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
 Package rerunfilecheck Info: File `submission.out' has not changed.
-(rerunfilecheck)             Checksum: 4316DE9C03DBD55A145B009F790861B0;5008.
+(rerunfilecheck)             Checksum: 3F2D210B4DA1F3C454F70E5DEBFD93D5;5008.
  ) 
 Here is how much of TeX's memory you used:
- 32205 strings out of 473898
- 591590 string characters out of 5726950
- 1094771 words of memory out of 5000000
- 53837 multiletter control sequences out of 15000+600000
- 709335 words of font info for 339 fonts, out of 8000000 for 9000
+ 32094 strings out of 473898
+ 589004 string characters out of 5726950
+ 1093251 words of memory out of 5000000
+ 53730 multiletter control sequences out of 15000+600000
+ 708937 words of font info for 337 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 99i,17n,131p,2164b,1055s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,131p,2164b,740s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumT.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTI.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
-Output written on submission.pdf (11 pages, 1818975 bytes).
+Output written on submission.pdf (11 pages, 1822329 bytes).
 PDF statistics:
- 271 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
+ 270 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
  88333 words of extra memory for PDF output out of 89155 (max. 10000000)
 
