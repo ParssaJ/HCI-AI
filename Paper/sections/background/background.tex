@@ -1,60 +1,82 @@
 \documentclass[../../submission.tex]{subfiles}
 \begin{document}
 \section{Background}
-Translating natural Text into SQL-Queries is not a new undertaking. 
-Back in 2003 Ana-MariaPopescu et.al proposed the PRECISE-System, which translates text into SQL-Queries
-based on a derived rule system. Not only did the PRECISE-System achieve remarkable Results, but the authors
-also mention that the translation of natural text into SQL-Queries is considered an AI-Complete task. With 
-the rapid advancements in AI in recent years, it makes sense to replace the deterministic rule based system 
-with a foundation model like CHAT-GPT to generate the SQL-Queries instead. 
+The gap between human communication and database interaction has been a persistent challenge in computer science. 
+Users of information systems naturally express their information need in everyday language, yet databases require
+precise, syntactically correct and structured queries - a mismatch that has fueled decades of research into natural language
+interfaces to databases \cite{androutsopoulosNaturalLanguageInterfaces1995}.
+Traditional keyword-based search systems often fail to capture the nuanced intent behind user queries,
+particularly in e-commerce environments where user frustation with suboptimal search results can directly
+impact business success \cite{manchandaIntentTermSelection2019}. This fundamental challenge has led to 
+various approaches in bridging the gap between natural language and database queries over the past decades.
 
-The objective of this initiative is to enhance the effectiveness of the search function on websites, with a particular focus on enhancing the performance of the input box. 
-As outlined in  \cite{customerLeavingSites} , 69\% of users initiate a search for products directly via the search bar. 
-However, 80\% of these users subsequently depart from the webpage due to unsatisfactory experiences with the search functionality. 
-In this study, 41\% of respondents expressed frustration regarding the display of irrelevant content. 
-A further issue that was identified as a point of frustration for 32\% of users was the presentation of products that were no longer available. 
-A further issue that 26\% of users encounter with contemporary search systems on websites is the inability of these systems to accurately interpret user queries. 
-To illustrate, when one seeks to procure a dresser and inaccurately enters "closet" as the search term, the websites encounter difficulties in locating the desired item.
+\subsection{Evolution of Natural Language Interfaces}
+The journey of Natural Language Interfaces (NLIs) dates back to the 1960s with pioneering
+systems like \textit{BASEBALL}, which translated natural language questions about baseball 
+statistics into database queries \cite{greenBaseballAutomaticQuestionanswerer1961}. 
+The development of \textit{LUNAR} \cite{woods1973progress} followed, helping NASA geologists query chemical analyses of lunar rocks.
+Both operated in narrow domains, relying heavily on manually crafted rules and domain-specific knowledge \cite{popescuEtalTowardsTheoryOfNaturalLanguage}.
+\\
+By the early 2000s, systems like \textit{PRECISE} advanced the field by treating translation as a 
+graph matching problem, achieving high precision for semantically tractable queries within a supported 
+domain. However, such systems still required extensive manual engineering
+and struggled with ambuigity.
+\\
+Current generation systems, powered by foundation models such as ChatGPT, 
+have largely overcome these historical limitations, demonstrating broad 
+language understanding with minimal engineering effort \cite{raffelExploringLimitsTransfer2023}.
+In the context of e-commerce, these models can interpret complex queries like "cheap 
+gaming laptop with high-quality webcam" by leveraging vast training data to infer 
+intent and map it to database fields/columns. For example, such systems could dynamically link
+"gaming" to attributes like high RAM or GPU performance, adressing user needs more intuitively
+than static templates. Nonetheless, new challenges emerge, such as the lack of transparency 
+in the output of these foundatin models and the need to ensure that generated queries are both 
+semantically accurate and syntactically correct.
+This is critical, as erroneous SQL queries cannot be executed, potentially resulting in a degraded user 
+experience, where users encounter errors or fail to retrieve search results. These emerging issues 
+highlight the need for research into transparent and reliable NL-to-SQL systems, particularly in domains 
+like e-commerce where user satisfaction is paramount. 
 
-A total of 69\% of users have confirmed that they encounter irrelevant search results, and of those, 35\% have indicated that this behavior prompts them to leave the webpage. 
-A further 27\% of users have confirmed that they have abandoned webpages due to the inability to restrict their searches. An additional 26\% have done so due to out-of-stock status. 
-A further notable issue is the absence of error tolerance in current websites, which results in the failure to display outcomes in instances of typographical inaccuracy.
+\subsection{Current Approaches to NL-to-SQL}
+The rise of deep learning has transformed NL-to-SQL translation from 
+rule-based and statistical methods to neural network based approaches. Early systems
+like Seq2SQL \cite{zhongSeq2SQLGeneratingStructured2017} used sequence-to-sequence models to generate SQL from natural language,
+performing well on simple queries but struggling with complex ones involving multiple 
+conditions or joins. Modern transformer-based models, such as those build on BERT and GPT-architecture,
+improve accuaracy by incorporating schema linking and intermediate representation, as 
+as seen in systems like RAT-SQL \cite{wangRATSQLRelationAwareSchema2021}. Tools like SQLAI.ai \cite{GenerateSQLQueries} exemplify this trend, leveraging large language models
+to generate SQL queries from natural language inputs, with minimal user effort. However, SQLAI.ai 
+introduces trade-offs: 1{)} it requires payment, 2{)} lacks transparency in its query generation process and 3{)}
+functions primarily as a developer tool, prioritizing flexibility over safety or interpretability.
+Nevertheless, these advances enable robust query generation across diverse 
+schemas, yet challenges remain in ensuring transparency and handling ambiguous input-issues, which 
+is critical for practical applications. As these techniques mature, their 
+potential to enhance domain-specific systems, such as those in e-commerce, has sparked growing interest, bridging
+the gap between technical innovation and real-world usability.
 
-\subsection{Translation difficulties between text and SQL(A)}
-Achieving an accurate interpretation of the user's intent in the context of translating text into SQL poses a considerable challenge. 
-This is due to the fact that some words could be ambiguous or the user might use synonyms.  
-The system should also demonstrate fault-tolerance capabilities, as it is expected to generate a query in the event of typing errors. 
-As previously stated in \cite{popescuEtalTowardsTheoryOfNaturalLanguage}, it is imperative to exercise caution to ensure that the system does not generate erroneous queries. 
-Otherwise, there is a risk of diminishing user trust in the website.  
-As elaborated upon in  \cite{popescuEtalTowardsTheoryOfNaturalLanguage}, users demonstrate a reluctance to trade a user interface that is characterised by reliability and predictability for an intelligent system that is deemed unreliable.
+\subsection{Usability in NL-to-SQL Systems}
+Usability is a cornerstone of effective human-computer interaction, especially 
+in e-commerce, where intuitive and efficient search experiences can determine 
+whether users complete a purchase or abandon their search altogether. 
+Unlike traditional 
+interfaces that force users to adapt to rigid keywords and filters, NL-to-SQL systems aim 
+to reverse this dynamic by interpreting natural language. The success of such systems relies heavily on aligning with user expectations.
 
+An important factor is interpreting diverse queries, from vague inputs like "good laptop" to precise ones 
+like "16Gb Ram Laptop under 600€". Studies show that flexibility in handling such variaty is vital, 
+as users rarely follow a single search query pattern \cite{manchandaIntentTermSelection2019}. Such system 
+have to map these input to relevant database field using the context of the domain or available metadata
+to ensure relevance. Another key aspect is feedback: when results miss the mark (for example, let the search-query 
+be "gaming laptop"), clear feedback like "Did you mean high GPU performance?" - improve relevance 
+and build trust by revealing the systems logic \cite{popescuEtalTowardsTheoryOfNaturalLanguage}, which is 
+crucial in e-comerce settings to reduce frustation and to retain users.
 
-\subsection{Privacy concerns(A)}
-Furthermore, it must be considered that non-technical users can also exploit the system by requesting private data. 
-This scenario poses significant privacy concerns, given that the users can bypass any need to understand SQL, and instead simply request the data they desire from the LLM. 
-In such systems, the implementation of measures designed to restrict access to data is essential for ensuring the security of private data.
-According to the Open Worldwide Application Security Project (OWASP), which is a 
-non-profit organization that aims to improve the security of software projects,
-SQL-Injections are still in the Top 10 Security Risks of 2021 and it is likely that 
-they will remain in the Top 10 of 2025, taking into account that they were the number
-one attack in the Top 10 of 2017 \cite{owaspfoundationOWASPTopTen2024}.
+Effective feedback naturally leads to the broader challenge of designing an interface that balances accessibility 
+with functionality. Rather than burdening users with technical complexity, the system should deliver results in 
+a way that feels intuitive for casual shoppers—e.g., prioritizing top matches based on intent—while allowing more 
+experienced users to refine searches through additional prompts or guided options. This approach ensures a seamless 
+experience across diverse audiences, minimizing search friction in a competitive e-commerce landscape. 
+By prioritizing such usability principles, NL-to-SQL systems can pave the way for practical implementations, such 
+as the interface we developed to explore these dynamics in a controlled user study, as detailed in the following section.
 
-\subsection{Problem with existing text-to-sql(A)}
-The rule-based method for generating SQL queries was presented in the paper  \cite{popescuEtalTowardsTheoryOfNaturalLanguage}. 
-However, several issues were identified in the course of this approach, which were addressed to a limited extent. 
-As previously mentioned, the system is confronted with ambiguous words. 
-In  \cite{popescuEtalTowardsTheoryOfNaturalLanguage}, the recommendation was made to present the user with all possible variants that can be derived from the multi-word term.  
-This enables the user to make an informed decision, ensuring an appropriate interpretation of their intention. 
-A further challenge arises when a word is not present in the lexicon, as no query is generated in this instance. 
-In such a scenario, it is imperative for the user to reformulate their query in a manner that is comprehensible to the system. 
-However, this approach introduces a significant disadvantage, as the preliminary query may be processed by the system, but its execution is precluded due to the system's limited capabilities. 
-The maintenance of synonyms poses a considerable challenge, as it is necessary to provide potential users with the opportunity to consult them. Consequently, a continuous adaptation of the system is required to ensure the quality of the results of the searches. 
-As demonstrated in \cite{popescuEtalTowardsTheoryOfNaturalLanguage}, a further issue is the considerable duration of user inquiry processing. In this study, a processing duration of six seconds was observed, which is regarded as relatively extensive when compared to the duration of a search in a web-based store.
-Nonetheless, a pivotal element was absent from the previously mentioned papers: the context of the values stored in the database. 
-To illustrate, supplementary information becomes pertinent when storing the age of dogs. 
-This necessity arises from the potential for storing the age of dogs in either months or years. 
-Depending on the specific context, additional rules may be in place that must be taken into consideration. 
-
-Text-to-SQL systems that leverage LLMs have been developed; a notable example is SQLAI.AI \footnote{https://www.sqlai.ai/}. 
-Despite its development for developers, SQLAI.AI is not suitable for practical application.
 \end{document}
