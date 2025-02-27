@@ -36,17 +36,28 @@ have provided a fairer comparison, as noted in Section 5.4. This limitation unde
 bias that future iterations must address to validate the AIs advantages more robustly.
 
 \subsection{Technical Feasibility and Prompt Design}
-The technical feasibility of NL-to-SQL translation, a core research question from Section 1.3, 
-was demonstrated through the Claude API’s ability to generate accurate SQL queries from varied 
-inputs (Section 3.1). However, Section 4.3 highlighted a critical security flaw: the AI translated a 
-malicious input ("delete all tables") into an executable query. This vulnerability, absent in the static 
-template due to its predefined structure, aligns with Section 1.1 mention of SQL Injection risks but 
-reveals a gap in our implementation. The rudimentary system prompt used for the Claude API, detailed in 
-Section 3.1, included only the schema and a base query without explicit constraints on permissible 
-operations (e.g., restricting to SELECT statements). This oversight contrasts with Section 2.2 emphasis on 
-the need for transparency and safety in modern NL-to-SQL systems. A more robust prompt, incorporating a whitelist 
-of allowed commands or natural language instructions to prioritize safety, could mitigate such risks, 
-enhancing the systems real-world applicability.
+The technical feasibility of NL-to-SQL translation, a central research 
+question from Section 1.3, was confirmed by the Claude API’s ability to 
+generate accurate SQL queries from diverse user inputs, as detailed in 
+Section 3.1. However, a significant security vulnerability emerged in 
+Section 4.3: the AI translated malicious inputs, such as „delete all tables,“ 
+into executable SQL queries. Unlike the static template, which avoids 
+such risks through its predefined structure, this flaw underscores a 
+critical gap in our implementation and echoes the SQL Injection concerns 
+raised in Section 1.1. The system prompt for the Claude API, outlined in 
+Section 3.1, was rudimentary—limited to the database schema and a base 
+query—lacking explicit constraints 
+(e.g., restricting operations to SELECT statements). This 
+oversight clashes with Section 2.2’s emphasis on transparency
+and safety as prerequisites for modern NL-to-SQL systems. A more 
+robust solution would have integrated our proposed blacklist 
+configuration (Section 4.3), filtering 
+out hazardous commands like DELETE or DROP. Additionally, instructing 
+users to test the system with adversarial inputs akin to „delete all tables“ 
+could have exposed further weaknesses, but time constraints prevented 
+this enhancement. These refinements would have strengthened both 
+security and practical applicability, aligning the system more 
+closely with real-world requirements.
 
 \subsection{Correction Strategies and Missing Metrics}
 Section 4.4 outlined user-suggested strategies like dynamic filter adjustment and query confidence 

@@ -4,13 +4,12 @@
 
 \section{Methods}
 To investigate the potential of our proposed approach, we designed a study centered around a webshop interface that enables users to directly 
-compare dynamically generated SQL queries with traditional static templates. This dual-display setup allows participants to experience both 
+compare dynamically generated SQL queries with traditional static templates \cite{jashniehParssaJHCIAI2025}. This dual-display setup allows participants to experience both 
 methods in real time and assess their effectiveness in retrieving relevant search results. To ensure a focused and controlled analysis, we 
 limited the webshop to a single product category. We chose dogs as the focal category due to their popularity and the diverse range of attributes—such as 
 breed, age, gender, color, size, and over 50 unique features—that lend themselves well to complex, semantic search queries. The underlying dataset comprises 
 147 AI-generated dog records, synthesized using ChatGPT and Claude, and enriched with real-world data from www.edogs.de \cite{edogsHundemarktHundeOnline}. A 
-structured relational database was developed to support efficient querying across these attributes.
-
+structured relational database was developed to support efficient querying across these attributes.\\
 The interface presents search results in two side-by-side sections, as illustrated in Fig. \ref{fig:wiener_dog}. 
 The left section displays results from AI-driven, dynamically generated queries, while the right section shows results 
 from a static query template enhanced with semantic matching. Users submit their queries via a shared search bar, with 
@@ -21,16 +20,15 @@ offering insights into how each aligns with their search preferences and behavio
 
 \subsection{Implementation of the Interface}
 Initially, we aimed to leverage a local large language model for dynamic SQL query generation, drawn by the advantages of cost-free access, 
-robust documentation, and adaptability. However, hardware constraints quickly surfaced. Testing models like Meta Llama-3.3-70B-Instruct \cite{MetallamaLlama3370BInstructHugging2024} and Microsoft Phi-4 \cite{MicrosoftPhi4Hugging2025} from Hugging Face on a system with 8GB RAM proved unfeasible due to insufficient memory and suboptimal performance, even with quantized versions (e.g., GGUF models). These limitations prompted a shift to an API-based solution. We selected the Claude API, which has demonstrated superior performance in complex tasks like programming and translation compared to alternatives like ChatGPT \cite{soboEvaluatingLLMsCode2025}.
-
+robust documentation, and adaptability. However, hardware constraints quickly surfaced. Testing models like Meta Llama-3.3-70B-Instruct \cite{MetallamaLlama3370BInstructHugging2024} and Microsoft Phi-4 \cite{MicrosoftPhi4Hugging2025} from Hugging Face on a system with 8GB RAM proved unfeasible due to insufficient memory and suboptimal performance, even with quantized versions (e.g., GGUF models). These limitations prompted a shift to an API-based solution. We selected the Claude API, which has demonstrated superior performance in complex tasks like programming and translation compared to alternatives like ChatGPT \cite{soboEvaluatingLLMsCode2025}.\\
 For the AI-driven approach, we crafted a prompt that includes the database schema, a comprehensive list of available features (e.g., "Hündin" or "Rüde" for gender), 
 and a base query to guide the generation process. This base query, shown in Fig. \ref{fig:base_query}, provides a standardized structure that ensures consistent 
 table relationships and attribute retrieval, which the AI refines based on user input. This setup enables the system to interpret both vague and detailed queries 
-accurately, mapping them to appropriate SQL statements. In contrast, the static template-based method adopts a straightforward yet functional design, tokenizing 
-user input and matching words to an OR-condition across dog breeds and descriptions, as depicted in Fig. \ref{fig:static_template}. While simple, this approach 
-ensures a fair baseline for comparison, allowing differences in performance to reflect the capabilities of AI-driven generation rather than deficiencies in the 
-static method.
-
+accurately, mapping them to appropriate SQL statements. The static template-based method employs a 
+streamlined design, tokenizing user input and applying an OR-condition across dog breeds 
+and descriptions (Fig. \ref{fig:static_template}). 
+Our static template was designed to provide a fair basis for comparison by reflecting 
+typical keyword-matching techniques used in many e-commerce systems.
 \begin{figure}[h]
    \centering
    \textbf{Base-Query}\par\medskip
@@ -59,19 +57,16 @@ static method.
    \caption{Static query template implementation exemplified with the input 'Labrador freundlich'. For each token ('Labrador' and 'freundlich', meaning 'friendly' in German), the template generates \texttt{LIKE} conditions to match both the \texttt{h.breed} and \texttt{h.description} attributes, linked by \texttt{OR}, extending the base query for keyword-based search.}
    \label{fig:static_template}
 \end{figure}
-
 \subsection{User Study}
 Our study involved 13 participants—12 male and one female—predominantly computer science students pursuing Bachelors or Masters degrees, 
 many with prior exposure to artificial intelligence through coursework or personal interest. This convenience sample, drawn from our academic 
 network, is small and relatively homogeneous but sufficient for an exploratory investigation. Participants were briefed on the study’s goal: to 
 compare the AI-driven search system against a conventional template-based approach and assess its potential to enhance product search accuracy and 
 user satisfaction. We hypothesized that the AI-generated queries would outperform the static method, particularly for vague, descriptive, or multi-criteria 
-searches, while the static approach would remain competitive for simple, attribute-based queries.
-
+searches, while the static approach would remain competitive for simple, attribute-based queries.\\
 The study unfolded in three phases. First, participants answered general questions about their past search experiences, 
 focusing on challenges encountered and their impact on shopping behavior. In the second phase, they interacted with the interface, 
 completing six predefined search tasks designed to explore varying levels of complexity:
-
 \begin{itemize}
    \item Find the Labrador Retriever
    \item Find the most expensive Labrador Retriever
@@ -80,7 +75,6 @@ completing six predefined search tasks designed to explore varying levels of com
    \item Find Chihuahuas that are eager to work
    \item Find all Rottweilers that are senior-friendly or German Shepherds younger than 12 months
 \end{itemize}
-
 These tasks progressed from basic attribute searches to complex queries unachievable with filters alone, 
 such as those requiring logical operators like "OR" across distinct attributes. Participants could freely use 
 natural language or static filters (unless specified), with the option to refine queries if results fell short. 

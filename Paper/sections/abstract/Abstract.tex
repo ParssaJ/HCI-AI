@@ -1,14 +1,31 @@
 \documentclass[../../submission.tex]{subfiles}
 \begin{document}
     \begin{abstract}
-        Typically, when a user interacts with a website, such as searching 
-        for an item or filtering the search results, a SQL template is used 
-        for which the user input gets added. By using an AI that translates 
-        natural language into SQL queries, the initial search results based 
-        on the keywords passed will most likely be tailored to the user's 
-        wishes, providing better search results initially without the need 
-        to interact with filters. To ensure regulatory compliance, such as 
-        not being able to use passwords as a search criterion, we assert 
-        a privacy preserving AI that can easily be integrated into an existing code/database.
+        Online shopping platforms often struggle to meet diverse user search 
+        needs due to the rigidity of traditional SQL templates and filtering 
+        mechanisms, leading to suboptimal user experiences. This paper 
+        explores an AI-driven natural language interface (NLI) that 
+        dynamically generates SQL queries from user inputs, aiming to 
+        enhance search intuitiveness and reduce dependency on manual 
+        filters. We developed a prototype e-commerce interface focused 
+        on a dog webshop, comparing AI-generated queries 
+        (via the Claude API) against a static template approach 
+        in a user study with 13 participants. Results show high 
+        user satisfaction with the AI system (mean 1.69, SD 0.48) 
+        compared to the conventional system (mean 3.62, SD 0.51), 
+        driven by its ability to interpret intent and handle synonyms 
+        (e.g., "Wiener Dog" as "Dachshund"). While 69.2\% of users could 
+        forgo filters, a minority favored their retention for visual 
+        clarity, highlighting a nuanced role for traditional mechanisms. 
+        Technical feasibility was demonstrated, though security 
+        vulnerabilities (e.g., unintended query execution) necessitate 
+        safeguards like blacklists or Prepared Statements. User-suggested 
+        correction strategies, such as dynamic filter adjustments and 
+        confidence indicators, further enhance transparency and trust. 
+        Despite limitations—including a small, tech-savvy sample and a 
+        basic static baseline—our findings suggest NL-to-SQL systems 
+        can transform e-commerce search, with broader implications for 
+        human-computer interaction, provided usability and security 
+        challenges are addressed.
     \end{abstract}
 \end{document}
