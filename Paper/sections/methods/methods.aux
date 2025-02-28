@@ -1,7 +1,23 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{jashniehParssaJHCIAI2025}
+\citation{edogsHundemarktHundeOnline}
+\citation{MetallamaLlama3370BInstructHugging2024}
+\citation{MicrosoftPhi4Hugging2025}
+\citation{soboEvaluatingLLMsCode2025}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Methods}{1}{section.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Implementation of the Interface}{1}{subsection.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}User Study}{1}{subsection.1.2}\protected@file@percent }
@@ -10,5 +26,10 @@
 \newlabel{tocindent1}{4.185pt}
 \newlabel{tocindent2}{10.34999pt}
 \newlabel{tocindent3}{0pt}
-\newlabel{TotPages}{{2}{2}{}{page.2}{}}
-\gdef \@abspage@last{2}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Base query utilized in our study, dynamically extended by the Claude API. The \texttt  {GROUP\_CONCAT} function aggregates all associated features into a single entry per dog, while the predefined structure ensures a consistent result order, such as the sequence of attributes, essential for our search implementation.\relax }}{2}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:base_query}{{1}{2}{Base query utilized in our study, dynamically extended by the Claude API. The \texttt {GROUP\_CONCAT} function aggregates all associated features into a single entry per dog, while the predefined structure ensures a consistent result order, such as the sequence of attributes, essential for our search implementation.\relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Static query template implementation exemplified with the input 'Labrador freundlich'. For each token ('Labrador' and 'freundlich', meaning 'friendly' in German), the template generates \texttt  {LIKE} conditions to match both the \texttt  {h.breed} and \texttt  {h.description} attributes, linked by \texttt  {OR}, extending the base query for keyword-based search.\relax }}{2}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:static_template}{{2}{2}{Static query template implementation exemplified with the input 'Labrador freundlich'. For each token ('Labrador' and 'freundlich', meaning 'friendly' in German), the template generates \texttt {LIKE} conditions to match both the \texttt {h.breed} and \texttt {h.description} attributes, linked by \texttt {OR}, extending the base query for keyword-based search.\relax }{figure.caption.2}{}}
+\newlabel{TotPages}{{3}{3}{}{page.3}{}}
+\gdef \@abspage@last{3}

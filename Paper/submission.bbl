@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{3}
+\begin{thebibliography}{16}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -37,12 +37,46 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
+\bibitem[Gen(2023)]%
+        {GenerateSQLQueries}
+ \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Generate {SQL} {Queries} in {Seconds} for {Free} - {SQLAI}.ai}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.sqlai.ai}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Met(2024)]%
+        {MetallamaLlama3370BInstructHugging2024}
+ \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{meta-llama/{Llama}-3.3-{70B}-{Instruct} · {Hugging} {Face}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Mic(2025)]%
+        {MicrosoftPhi4Hugging2025}
+ \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{microsoft/phi-4 · {Hugging} {Face}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://huggingface.co/microsoft/phi-4}
+\showURL{%
+\tempurl}
+
+
 \bibitem[Ana-Maria~Popescu(2003)]%
         {popescuEtalTowardsTheoryOfNaturalLanguage}
-\bibfield{author}{\bibinfo{person}{Henry~Kautz Ana-Maria~Popescu,
-  Oren~Etzioni}.} \bibinfo{year}{2003}\natexlab{}.
-\newblock \bibinfo{booktitle}{\emph{Towards a Theory of Natural Language
-  Interfaces to Databases}}.
+\bibfield{author}{\bibinfo{person}{Henry~Kautz Ana-Maria~Popescu, Oren~Etzioni}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Towards a Theory of Natural Language Interfaces to Databases}}.
 \newblock
 \urldef\tempurl%
 \url{https://dl.acm.org/doi/10.1145/604045.604070}
@@ -50,10 +84,84 @@
 \tempurl}
 
 
+\bibitem[Androutsopoulos et~al\mbox{.}(1995)]%
+        {androutsopoulosNaturalLanguageInterfaces1995}
+\bibfield{author}{\bibinfo{person}{I. Androutsopoulos}, \bibinfo{person}{G.~D. Ritchie}, {and} \bibinfo{person}{P. Thanisch}.} \bibinfo{year}{1995}\natexlab{}.
+\newblock \bibinfo{title}{Natural {Language} {Interfaces} to {Databases} - {An} {Introduction}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.48550/arXiv.cmp-lg/9503016}
+\showDOI{\tempurl}
+\newblock
+\shownote{arXiv:cmp-lg/9503016}.
+
+
+\bibitem[edogs(2017)]%
+        {edogsHundemarktHundeOnline}
+\bibfield{author}{\bibinfo{person}{edogs}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{Hundemarkt: {Hunde} online finden - edogs.de}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.edogs.de/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Gao et~al\mbox{.}(2023)]%
+        {gaoTextSQLEmpoweredLarge2023}
+\bibfield{author}{\bibinfo{person}{Dawei Gao}, \bibinfo{person}{Haibin Wang}, \bibinfo{person}{Yaliang Li}, \bibinfo{person}{Xiuyu Sun}, \bibinfo{person}{Yichen Qian}, \bibinfo{person}{Bolin Ding}, {and} \bibinfo{person}{Jingren Zhou}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Text-to-{SQL} {Empowered} by {Large} {Language} {Models}: {A} {Benchmark} {Evaluation}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.48550/arXiv.2308.15363}
+\showDOI{\tempurl}
+\newblock
+\shownote{arXiv:2308.15363 [cs]}.
+
+
+\bibitem[Green et~al\mbox{.}(1961)]%
+        {greenBaseballAutomaticQuestionanswerer1961}
+\bibfield{author}{\bibinfo{person}{Bert~F. Green}, \bibinfo{person}{Alice~K. Wolf}, \bibinfo{person}{Carol Chomsky}, {and} \bibinfo{person}{Kenneth Laughery}.} \bibinfo{year}{1961}\natexlab{}.
+\newblock \showarticletitle{Baseball: an automatic question-answerer}. In \bibinfo{booktitle}{\emph{Papers presented at the {May} 9-11, 1961, western joint {IRE}-{AIEE}-{ACM} computer conference on - {IRE}-{AIEE}-{ACM} '61 ({Western})}}. \bibinfo{publisher}{ACM Press}, \bibinfo{address}{Los Angeles, California}, \bibinfo{pages}{219}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1460690.1460714}
+\showDOI{\tempurl}
+
+
+\bibitem[Jashnieh(2025)]%
+        {jashniehParssaJHCIAI2025}
+\bibfield{author}{\bibinfo{person}{Parssa Jashnieh}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{ParssaJ}/{HCI}-{AI}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://github.com/ParssaJ/HCI-AI}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{original-date: 2024-10-09T15:55:13Z}.
+
+
+\bibitem[Manchanda et~al\mbox{.}(2019)]%
+        {manchandaIntentTermSelection2019}
+\bibfield{author}{\bibinfo{person}{Saurav Manchanda}, \bibinfo{person}{Mohit Sharma}, {and} \bibinfo{person}{George Karypis}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{Intent term selection and refinement in e-commerce queries}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.48550/arXiv.1908.08564}
+\showDOI{\tempurl}
+\newblock
+\shownote{arXiv:1908.08564 [cs]}.
+
+
 \bibitem[{OWASP Foundation}(2024)]%
         {owaspfoundationOWASPTopTen2024}
-\bibfield{author}{\bibinfo{person}{{OWASP Foundation}}.}
-  \bibinfo{year}{2024}\natexlab{}.
+\bibfield{author}{\bibinfo{person}{{OWASP Foundation}}.} \bibinfo{year}{2024}\natexlab{}.
 \newblock \bibinfo{booktitle}{\emph{{{OWASP Top Ten}} | {{OWASP Foundation}}}}.
 \newblock
 \urldef\tempurl%
@@ -62,18 +170,62 @@
 \tempurl}
 
 
-\bibitem[Rouse(2023)]%
-        {customerLeavingSites}
-\bibfield{author}{\bibinfo{person}{Eve Rouse}.}
-  \bibinfo{year}{2023}\natexlab{}.
-\newblock \bibinfo{booktitle}{\emph{New research: 69\% of online shoppers go
-  straight to the search bar when visiting ecommerce sites, but 80\% leave due
-  to a poor experience}}.
+\bibitem[Raffel et~al\mbox{.}(2023)]%
+        {raffelExploringLimitsTransfer2023}
+\bibfield{author}{\bibinfo{person}{Colin Raffel}, \bibinfo{person}{Noam Shazeer}, \bibinfo{person}{Adam Roberts}, \bibinfo{person}{Katherine Lee}, \bibinfo{person}{Sharan Narang}, \bibinfo{person}{Michael Matena}, \bibinfo{person}{Yanqi Zhou}, \bibinfo{person}{Wei Li}, {and} \bibinfo{person}{Peter~J. Liu}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Exploring the {Limits} of {Transfer} {Learning} with a {Unified} {Text}-to-{Text} {Transformer}}.
+\newblock
 \newblock
 \urldef\tempurl%
-\url{https://www.nosto.com/blog/new-search-research/}
-\showURL{%
-\tempurl}
+\url{https://doi.org/10.48550/arXiv.1910.10683}
+\showDOI{\tempurl}
+\newblock
+\shownote{arXiv:1910.10683 [cs]}.
+
+
+\bibitem[Sobo et~al\mbox{.}(2025)]%
+        {soboEvaluatingLLMsCode2025}
+\bibfield{author}{\bibinfo{person}{Andrei Sobo}, \bibinfo{person}{Awes Mubarak}, \bibinfo{person}{Almas Baimagambetov}, {and} \bibinfo{person}{Nikolaos Polatidis}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Evaluating {LLMs} for {Code} {Generation} in {HRI}: {A} {Comparative} {Study} of {ChatGPT}, {Gemini}, and {Claude}}.
+\newblock \bibinfo{journal}{\emph{Applied Artificial Intelligence}} \bibinfo{volume}{39}, \bibinfo{number}{1} (\bibinfo{date}{Dec.} \bibinfo{year}{2025}), \bibinfo{pages}{2439610}.
+\newblock
+\showISSN{0883-9514, 1087-6545}
+\urldef\tempurl%
+\url{https://doi.org/10.1080/08839514.2024.2439610}
+\showDOI{\tempurl}
+
+
+\bibitem[Wang et~al\mbox{.}(2021)]%
+        {wangRATSQLRelationAwareSchema2021}
+\bibfield{author}{\bibinfo{person}{Bailin Wang}, \bibinfo{person}{Richard Shin}, \bibinfo{person}{Xiaodong Liu}, \bibinfo{person}{Oleksandr Polozov}, {and} \bibinfo{person}{Matthew Richardson}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{{RAT}-{SQL}: {Relation}-{Aware} {Schema} {Encoding} and {Linking} for {Text}-to-{SQL} {Parsers}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.48550/arXiv.1911.04942}
+\showDOI{\tempurl}
+\newblock
+\shownote{arXiv:1911.04942 [cs]}.
+
+
+\bibitem[Woods(1973)]%
+        {woods1973progress}
+\bibfield{author}{\bibinfo{person}{William~A Woods}.} \bibinfo{year}{1973}\natexlab{}.
+\newblock \showarticletitle{Progress in natural language understanding: an application to lunar geology}. In \bibinfo{booktitle}{\emph{Proceedings of the June 4-8, 1973, national computer conference and exposition}}. \bibinfo{publisher}{ACM}, \bibinfo{pages}{441--450}.
+\newblock
+
+
+\bibitem[Zhong et~al\mbox{.}(2017)]%
+        {zhongSeq2SQLGeneratingStructured2017}
+\bibfield{author}{\bibinfo{person}{Victor Zhong}, \bibinfo{person}{Caiming Xiong}, {and} \bibinfo{person}{Richard Socher}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{title}{{Seq2SQL}: {Generating} {Structured} {Queries} from {Natural} {Language} using {Reinforcement} {Learning}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.48550/arXiv.1709.00103}
+\showDOI{\tempurl}
+\newblock
+\shownote{arXiv:1709.00103 [cs]}.
 
 
 \end{thebibliography}

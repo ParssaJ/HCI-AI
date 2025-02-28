@@ -1,70 +1,111 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Highlighting the interaction paradigm of the user with an AI. Instead of traditionally passing the users input to a static SQL-Template, it is passed to an AI-System that interpretes the users search request and dynamically generates a SQL-Query . The resulting query is then executed and displayed for the user in the Interface.}}{1}{figure.caption.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
 \citation{owaspfoundationOWASPTopTen2024}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Highlighting the interaction paradigm of the user with an AI. Instead of traditionally passing the users input to a static SQL-Template, it is passed to an AI-System that interpretes the users search request and dynamically generates a SQL-Query . The resulting query is then executed and displayed for the user in the Interface.\relax }}{2}{figure.caption.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}The conventional search mechanism}{2}{subsection.1.1}\protected@file@percent }
-\citation{customerLeavingSites}
+\citation{androutsopoulosNaturalLanguageInterfaces1995}
+\citation{manchandaIntentTermSelection2019}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Limitations of traditional filtering mechanisms}{3}{subsection.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Moving beyond traditional search limitations}{3}{subsection.1.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}Background}{3}{section.2}\protected@file@percent }
+\citation{greenBaseballAutomaticQuestionanswerer1961}
+\citation{woods1973progress}
 \citation{popescuEtalTowardsTheoryOfNaturalLanguage}
+\citation{raffelExploringLimitsTransfer2023}
+\citation{zhongSeq2SQLGeneratingStructured2017}
+\citation{wangRATSQLRelationAwareSchema2021}
+\citation{GenerateSQLQueries}
+\citation{manchandaIntentTermSelection2019}
 \citation{popescuEtalTowardsTheoryOfNaturalLanguage}
-\citation{owaspfoundationOWASPTopTen2024}
-\citation{popescuEtalTowardsTheoryOfNaturalLanguage}
-\citation{popescuEtalTowardsTheoryOfNaturalLanguage}
-\citation{popescuEtalTowardsTheoryOfNaturalLanguage}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Translation difficulties between text and SQL(A)}{4}{subsection.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Privacy concerns(A)}{4}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Problem with existing text-to-sql(A)}{4}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Evolution of Natural Language Interfaces}{4}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Current Approaches to NL-to-SQL}{4}{subsection.2.2}\protected@file@percent }
+\citation{jashniehParssaJHCIAI2025}
+\citation{edogsHundemarktHundeOnline}
+\citation{MetallamaLlama3370BInstructHugging2024}
+\citation{MicrosoftPhi4Hugging2025}
+\citation{soboEvaluatingLLMsCode2025}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Usability in NL-to-SQL Systems}{5}{subsection.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Methods}{5}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Implementation of the Interface}{5}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}User Study}{6}{subsection.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Result}{6}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}User Satisfaction and Search Behavior(RSQ1)}{6}{subsection.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The users' rating regarding the satisfaction of the results displayed by the AI. As can be seen in the picture, the participants were very satisfied with the results of the AI.}}{7}{figure.caption.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Implementation of the Interface}{6}{subsection.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Base query utilized in our study, dynamically extended by the Claude API. The \texttt  {GROUP\_CONCAT} function aggregates all associated features into a single entry per dog, while the predefined structure ensures a consistent result order, such as the sequence of attributes, essential for our search implementation.\relax }}{6}{figure.caption.3}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:result_AI}{{2}{7}{The users' rating regarding the satisfaction of the results displayed by the AI. As can be seen in the picture, the participants were very satisfied with the results of the AI}{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The evaluation of the users regarding the satisfaction with the result displayed by the conventional system. The picture shows that they were not satisfied with the results displayed by the conventional system.}}{7}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:result_Konv}{{3}{7}{The evaluation of the users regarding the satisfaction with the result displayed by the conventional system. The picture shows that they were not satisfied with the results displayed by the conventional system}{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces In this picture we see the website that was developed for the project. The website was divided so that the user can quickly see which results belong to AI and which to the conventional system. To demonstrate the performance of the AI, Wiener dog was entered in the input field. As you can see, the AI can handle this, but the conventional system cannot.}}{7}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:wiener_dog}{{4}{7}{In this picture we see the website that was developed for the project. The website was divided so that the user can quickly see which results belong to AI and which to the conventional system. To demonstrate the performance of the AI, Wiener dog was entered in the input field. As you can see, the AI can handle this, but the conventional system cannot}{figure.caption.4}{}}
+\newlabel{fig:base_query}{{2}{6}{Base query utilized in our study, dynamically extended by the Claude API. The \texttt {GROUP\_CONCAT} function aggregates all associated features into a single entry per dog, while the predefined structure ensures a consistent result order, such as the sequence of attributes, essential for our search implementation.\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Static query template implementation exemplified with the input 'Labrador freundlich'. For each token ('Labrador' and 'freundlich', meaning 'friendly' in German), the template generates \texttt  {LIKE} conditions to match both the \texttt  {h.breed} and \texttt  {h.description} attributes, linked by \texttt  {OR}, extending the base query for keyword-based search.\relax }}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:static_template}{{3}{6}{Static query template implementation exemplified with the input 'Labrador freundlich'. For each token ('Labrador' and 'freundlich', meaning 'friendly' in German), the template generates \texttt {LIKE} conditions to match both the \texttt {h.breed} and \texttt {h.description} attributes, linked by \texttt {OR}, extending the base query for keyword-based search.\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}User Study}{6}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Result}{7}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}User Satisfaction and Search Behavior(RSQ1)}{7}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The users' rating regarding the satisfaction of the results displayed by the AI. As can be seen in the picture, the participants were very satisfied with the results of the AI.\relax }}{8}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:result_AI}{{4}{8}{The users' rating regarding the satisfaction of the results displayed by the AI. As can be seen in the picture, the participants were very satisfied with the results of the AI.\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The evaluation of the users regarding the satisfaction with the result displayed by the conventional system. The picture shows that they were not satisfied with the results displayed by the conventional system.\relax }}{8}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:result_Konv}{{5}{8}{The evaluation of the users regarding the satisfaction with the result displayed by the conventional system. The picture shows that they were not satisfied with the results displayed by the conventional system.\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces In this picture we see the website that was developed for the project. The website was divided so that the user can quickly see which results belong to AI and which to the conventional system. To demonstrate the performance of the AI, Wiener dog was entered in the input field. As you can see, the AI can handle this, but the conventional system cannot.\relax }}{8}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:wiener_dog}{{6}{8}{In this picture we see the website that was developed for the project. The website was divided so that the user can quickly see which results belong to AI and which to the conventional system. To demonstrate the performance of the AI, Wiener dog was entered in the input field. As you can see, the AI can handle this, but the conventional system cannot.\relax }{figure.caption.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}The Role of Filters in Enhancing User Experience}{8}{subsection.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces After the users have used the system, they should state whether they would manage without the filter.The results show that the majority of users can manage without a filter without any problems. Three times “disagree” was indicated, while no “strongly disagree” was recorded.}}{8}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:without_filter}{{5}{8}{After the users have used the system, they should state whether they would manage without the filter.The results show that the majority of users can manage without a filter without any problems. Three times “disagree” was indicated, while no “strongly disagree” was recorded}{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Technical Feasibility and Security Considerations}{8}{subsection.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces After the users have used the system, they should state whether they would manage without the filter.The results show that the majority of users can manage without a filter without any problems. Three times “disagree” was indicated, while no “strongly disagree” was recorded.\relax }}{9}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:without_filter}{{7}{9}{After the users have used the system, they should state whether they would manage without the filter.The results show that the majority of users can manage without a filter without any problems. Three times “disagree” was indicated, while no “strongly disagree” was recorded.\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Technical Feasibility and Security Considerations (RSQ2)}{9}{subsection.4.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Optimizing Query Correction Strategies (RSQ3)}{9}{subsection.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}Dynamic Filter Adjustment}{9}{subsubsection.4.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Here the user can see how the filter is adapted to the user's input. The filter adapts to user input, revealing AI misinterpretations (implicitely).}}{9}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:filter}{{6}{9}{Here the user can see how the filter is adapted to the user's input. The filter adapts to user input, revealing AI misinterpretations (implicitely)}{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}User Notification for No Results}{9}{subsubsection.4.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Here the user is informed by the AI if the features are not combinable. It is made clear that ‘under 2 months’ cannot be combined with the other features, as this feature is crossed out.}}{9}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:no_result}{{7}{9}{Here the user is informed by the AI if the features are not combinable. It is made clear that ‘under 2 months’ cannot be combined with the other features, as this feature is crossed out}{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}Dynamic Filter Adjustment}{10}{subsubsection.4.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Here the user can see how the filter is adapted to the user's input. The filter adapts to user input, revealing AI misinterpretations (implicitely).\relax }}{10}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:filter}{{8}{10}{Here the user can see how the filter is adapted to the user's input. The filter adapts to user input, revealing AI misinterpretations (implicitely).\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}User Notification for No Results}{10}{subsubsection.4.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Here the user is informed by the AI if the features are not combinable. It is made clear that ‘under 2 months’ cannot be combined with the other features, as this feature is crossed out.\relax }}{10}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:no_result}{{9}{10}{Here the user is informed by the AI if the features are not combinable. It is made clear that ‘under 2 months’ cannot be combined with the other features, as this feature is crossed out.\relax }{figure.caption.9}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}Display of Similar Results}{10}{subsubsection.4.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.4}Real-time AI-driven Suggestions}{10}{subsubsection.4.4.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The AI provides real-time suggestions for narrowing searches, such as additional features for 'Chihuahuas'.}}{10}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:suggestions}{{8}{10}{The AI provides real-time suggestions for narrowing searches, such as additional features for 'Chihuahuas'}{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.5}Query Confidence Indicator}{10}{subsubsection.4.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{10}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Use of Filter}{10}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.4}Real-time AI-driven Suggestions}{11}{subsubsection.4.4.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces The AI provides real-time suggestions for narrowing searches, such as additional features for 'Chihuahuas'.\relax }}{11}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:suggestions}{{10}{11}{The AI provides real-time suggestions for narrowing searches, such as additional features for 'Chihuahuas'.\relax }{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{11}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}User Satisfaction and Behavioral Shifts}{11}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Role of Filters and Implementation Bias}{11}{subsection.5.2}\protected@file@percent }
+\citation{gaoTextSQLEmpoweredLarge2023}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Technical Feasibility and Prompt Design}{12}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Correction Strategies and Missing Metrics}{12}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Additional Limitations}{12}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{12}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Acknowledgement}{13}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Appendix}{13}{appendix.A}\protected@file@percent }
+\newlabel{appendix:questions}{{A}{13}{Appendix}{appendix.A}{}}
 \bibstyle{ACM-Reference-Format}
 \bibdata{references}
-\bibcite{popescuEtalTowardsTheoryOfNaturalLanguage}{{1}{2003}{{Ana-Maria~Popescu}}{{}}}
-\bibcite{owaspfoundationOWASPTopTen2024}{{2}{2024}{{OWASP Foundation}}{{}}}
-\bibcite{customerLeavingSites}{{3}{2023}{{Rouse}}{{}}}
+\bibcite{GenerateSQLQueries}{{1}{2023}{{Gen}}{{}}}
+\bibcite{MetallamaLlama3370BInstructHugging2024}{{2}{2024}{{Met}}{{}}}
+\bibcite{MicrosoftPhi4Hugging2025}{{3}{2025}{{Mic}}{{}}}
+\bibcite{popescuEtalTowardsTheoryOfNaturalLanguage}{{4}{2003}{{Ana-Maria~Popescu}}{{}}}
+\bibcite{androutsopoulosNaturalLanguageInterfaces1995}{{5}{1995}{{Androutsopoulos et~al\mbox  {.}}}{{}}}
+\bibcite{edogsHundemarktHundeOnline}{{6}{2017}{{edogs}}{{}}}
+\bibcite{gaoTextSQLEmpoweredLarge2023}{{7}{2023}{{Gao et~al\mbox  {.}}}{{}}}
+\bibcite{greenBaseballAutomaticQuestionanswerer1961}{{8}{1961}{{Green et~al\mbox  {.}}}{{}}}
+\bibcite{jashniehParssaJHCIAI2025}{{9}{2025}{{Jashnieh}}{{}}}
+\bibcite{manchandaIntentTermSelection2019}{{10}{2019}{{Manchanda et~al\mbox  {.}}}{{}}}
+\bibcite{owaspfoundationOWASPTopTen2024}{{11}{2024}{{OWASP Foundation}}{{}}}
+\bibcite{raffelExploringLimitsTransfer2023}{{12}{2023}{{Raffel et~al\mbox  {.}}}{{}}}
+\bibcite{soboEvaluatingLLMsCode2025}{{13}{2025}{{Sobo et~al\mbox  {.}}}{{}}}
+\bibcite{wangRATSQLRelationAwareSchema2021}{{14}{2021}{{Wang et~al\mbox  {.}}}{{}}}
+\bibcite{woods1973progress}{{15}{1973}{{Woods}}{{}}}
+\bibcite{zhongSeq2SQLGeneratingStructured2017}{{16}{2017}{{Zhong et~al\mbox  {.}}}{{}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
-\newlabel{tocindent1}{4.185pt}
+\newlabel{tocindent1}{6.25499pt}
 \newlabel{tocindent2}{10.34999pt}
 \newlabel{tocindent3}{18.198pt}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Improvement through AI}{11}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Limitations}{11}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Future Work}{11}{subsection.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Design Recommendations}{11}{subsection.5.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{11}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{References}{11}{section*.10}\protected@file@percent }
-\newlabel{TotPages}{{11}{11}{}{page.11}{}}
-\gdef \@abspage@last{11}
+\@writefile{toc}{\contentsline {section}{References}{14}{section*.14}\protected@file@percent }
+\newlabel{TotPages}{{14}{14}{}{page.14}{}}
+\gdef \@abspage@last{14}
